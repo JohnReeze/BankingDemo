@@ -1,0 +1,27 @@
+xcassets:
+  - inputs: 
+      - BankingDemo/Resources/Images/Assets.xcassets
+    outputs:
+      - templateName: swift4
+        output: BankingDemo/Resources/Constants/Images.swift
+        params:
+          enumName: Styles
+          publicAccess: true
+
+fonts:
+  inputs:
+    - BankingDemo/Resources/Fonts
+  outputs:
+    - templateName: swift4
+      output: BankingDemo/Resources/Constants/Fonts.swift
+      params:
+        publicAccess: true
+
+strings:
+  inputs:
+    - BankingDemo/Resources/Strings/Localizable.strings
+  outputs:
+    - templateName: structured-swift4
+      output: BankingDemo/Resources/Constants/Strings.swift
+      params:
+        publicAccess: true

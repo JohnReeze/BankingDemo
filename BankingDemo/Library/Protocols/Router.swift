@@ -3,7 +3,7 @@
 //
 
 /// Describes object that handles all navigation operations
-protocol Router {
+protocol Router: class {
     func present(_ module: Presentable?)
     func present(_ module: Presentable?, animated: Bool, completion: (() -> Void)?)
 

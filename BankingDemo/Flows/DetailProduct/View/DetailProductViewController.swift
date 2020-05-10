@@ -33,7 +33,7 @@ final class DetailProductViewController: UIViewController, ModuleTransitionable 
 
     // MARK: - Properties
 
-//    var headerContent: ContentScrollableHeader?
+    var headerContent: ContentScrollableHeader?
 //    var mainContent: ProductDetailedInfoViewProtocol?
     var output: DetailProductViewOutput?
 
@@ -136,7 +136,7 @@ extension DetailProductViewController: UIScrollViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollDirection = mainScrollView.lastContentOffset.y < scrollView.contentOffset.y ? .up : .down
-//        headerContent?.setContentOffset(scrollView.contentOffset.y)
+        headerContent?.setContentOffset(scrollView.contentOffset.y)
         handleScroll(mainScrollView)
         if scrollView.isDecelerating {
             tryToAutoCompleteScroll(scrollView)
@@ -288,19 +288,19 @@ private extension DetailProductViewController {
     }
 
     func setupHeader() {
-//        guard let header = headerContent?.viewController else {
-//            return
-//        }
-//
-//        headerContent?.setAnimationBlock(self.animationBlock)
-//        self.addChild(header)
-//        self.headerContainer.addSubview(header.view)
-//        header.didMove(toParent: self)
-//        header.view.translatesAutoresizingMaskIntoConstraints = false
-//        headerContent?.setContentHeightConstraint(headerConstraint)
-//
-//        header.view.fillSuperview()
-//        view.layoutIfNeeded()
+        guard let header = headerContent?.viewController else {
+            return
+        }
+
+        headerContent?.setAnimationBlock(self.animationBlock)
+        self.addChild(header)
+        self.headerContainer.addSubview(header.view)
+        header.didMove(toParent: self)
+        header.view.translatesAutoresizingMaskIntoConstraints = false
+        headerContent?.setContentHeightConstraint(headerConstraint)
+
+        header.view.fillSuperview()
+        view.layoutIfNeeded()
         self.mainScrollView.isHidden = false
     }
 

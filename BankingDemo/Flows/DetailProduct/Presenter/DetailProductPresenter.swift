@@ -17,6 +17,7 @@ final class DetailProductPresenter {
     // MARK: - Properties
 
     weak var view: DetailProductViewInput?
+    weak var mainContentInput: ProductMainInfoInput?
     var router: DetailProductRouterInput?
 
     // MARK: - Private Properties
@@ -52,5 +53,21 @@ extension DetailProductPresenter: DetailProductViewOutput {
     func viewWillDisappear() {
 
     }
+
+}
+
+extension DetailProductPresenter: ProductMainInfoOutput {
+    func didStateChanged(_ newState: ProductStateViewModel) {
+
+    }
+
+    func didSelectCard(at index: Int?) {
+
+    }
+
+    func didChangedBalance(_ isHidden: Bool) {
+        
+    }
+
 
 }

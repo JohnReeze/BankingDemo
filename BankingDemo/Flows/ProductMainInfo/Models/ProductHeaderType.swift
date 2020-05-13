@@ -22,11 +22,10 @@ enum ProductHeaderType: Equatable {
         let description: String?
     }
 
-    struct LinkedCardModel: Equatable {
+    struct LinkedCardModel {
         let id: String
-        let background: UIColor
-        let number: String
-        let type: String
+        let title: String
+        let cardModel: CardViewModel
     }
 
     static func == (lhs: ProductHeaderType, rhs: ProductHeaderType) -> Bool {
@@ -34,7 +33,7 @@ enum ProductHeaderType: Equatable {
         case (.regular(let lhsModel), .regular(let rhsModel)):
             return lhsModel.id == rhsModel.id
         case (.card(let lhsModel), .card(let rhsModel)):
-            return lhsModel == rhsModel
+            return lhsModel.id == rhsModel.id
         default:
             return false
         }

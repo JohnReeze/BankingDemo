@@ -12,7 +12,6 @@ final class ProductsCarouselView: DesignableView {
 
     // MARK: - IBOutlets
 
-//    @IBOutlet private weak var pageControl: FlatPageControl!
     @IBOutlet private weak var collectionView: UICollectionView!
 
     // MARK: - Private Properties
@@ -46,7 +45,6 @@ private extension ProductsCarouselView {
 
     func setupInitialState() {
         self.backgroundColor = .clear
-//        pageControl.backgroundColor = .clear
         configureCarouselAdapter()
     }
 
@@ -54,12 +52,11 @@ private extension ProductsCarouselView {
         adapter = ProductCarouselAdapter(with: collectionView)
         adapter?.didScroll = { [weak self] (stateModel, didEndChanged) in
             guard let self = self else { return }
-//            self.pageControl.setCurrentPage(stateModel.fromPage, animated: true)
             self.didScroll?(stateModel, didEndChanged)
         }
 
         adapter?.didSelectHideOption = weak(self) { $0.didSelectHideOption?() }
-//        collectionView.delegate = adapter
+        collectionView.delegate = adapter
         collectionView.dataSource = adapter
         collectionView.backgroundColor = .clear
     }

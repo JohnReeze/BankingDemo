@@ -18,7 +18,19 @@
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum Styles {
-  public static let main = ColorAsset(name: "main")
+  public enum Colors {
+
+    public static let main = ColorAsset(name: "Colors/main")
+  }
+  public enum Images {
+
+    public enum CardType {
+      public static let master = ImageAsset(name: "Images/CardType/master")
+      public static let mir = ImageAsset(name: "Images/CardType/mir")
+      public static let visa = ImageAsset(name: "Images/CardType/visa")
+    }
+    public static let settings = ImageAsset(name: "Images/settings")
+  }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

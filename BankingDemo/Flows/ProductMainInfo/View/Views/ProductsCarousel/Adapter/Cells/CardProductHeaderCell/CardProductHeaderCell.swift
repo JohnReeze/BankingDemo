@@ -2,12 +2,22 @@
 //  CardProductHeaderCell.swift
 //  ZenitOnline
 //
-//  Created by Mikhail Monakov on 22/01/2020.
-//  Copyright © 2020 Surf. All rights reserved.
-//
 
 import UIKit
 
 final class CardProductHeaderCell: UICollectionViewCell {
+
+    // MARK: - IBOutlets
+
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var cardView: CardView!
+    @IBOutlet private weak var settingsButton: UIButton!
+
+    // MARK: - Internal methods
+
+    func configure(title: String, cardModel: CardViewModel) {
+        titleLabel.text = title
+        cardView.configure(with: cardModel)
+    }
 
 }

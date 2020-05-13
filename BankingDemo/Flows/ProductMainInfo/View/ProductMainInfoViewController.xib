@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductMainInfoViewController" customModule="BankingDemoDebug" customModuleProvider="target">
             <connections>
+                <outlet property="indicator" destination="ySb-jo-gas" id="Q0J-mo-5Bo"/>
                 <outlet property="productOptionsView" destination="0xj-op-nvN" id="HcX-0p-O55"/>
                 <outlet property="productOptionsViewTopConstraint" destination="4ry-cD-WYW" id="NZi-Xl-AvE"/>
                 <outlet property="productsCarousel" destination="vlB-Go-F9X" id="27T-04-7Yq"/>
@@ -22,24 +23,34 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vlB-Go-F9X" customClass="ProductsCarouselView" customModule="BankingDemoDebug" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="602" height="125"/>
+                    <rect key="frame" x="0.0" y="0.0" width="602" height="200"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="125" id="XLR-oG-VYY"/>
+                        <constraint firstAttribute="height" constant="200" id="XLR-oG-VYY"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xj-op-nvN" customClass="ProductOptionsView" customModule="BankingDemoDebug" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="125" width="602" height="212"/>
+                    <rect key="frame" x="0.0" y="200" width="602" height="137"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ySb-jo-gas" customClass="InfiniteInidicator" customModule="BankingDemoDebug" customModuleProvider="target">
+                    <rect key="frame" x="30" y="200" width="542" height="2"/>
+                    <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="MzL-SH-eGn"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="0xj-op-nvN" firstAttribute="top" secondItem="vlB-Go-F9X" secondAttribute="bottom" id="4ry-cD-WYW"/>
+                <constraint firstAttribute="trailing" secondItem="ySb-jo-gas" secondAttribute="trailing" constant="30" id="6aK-Qu-ugu"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vlB-Go-F9X" secondAttribute="trailing" id="FIP-ds-71a"/>
                 <constraint firstAttribute="bottom" secondItem="0xj-op-nvN" secondAttribute="bottom" id="GdK-2Z-u0i"/>
                 <constraint firstAttribute="trailing" secondItem="0xj-op-nvN" secondAttribute="trailing" id="ZiV-Na-UZf"/>
                 <constraint firstItem="vlB-Go-F9X" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="d2c-4P-oLs"/>
+                <constraint firstItem="ySb-jo-gas" firstAttribute="top" secondItem="vlB-Go-F9X" secondAttribute="bottom" id="fKA-IH-ofD"/>
+                <constraint firstItem="ySb-jo-gas" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="iDx-cM-wSL"/>
                 <constraint firstItem="0xj-op-nvN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sJ5-A5-lWF"/>
                 <constraint firstItem="vlB-Go-F9X" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ype-xQ-h7j"/>
             </constraints>

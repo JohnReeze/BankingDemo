@@ -15,13 +15,14 @@ final class ProductMainInfoViewController: UIViewController {
     // MARK: - Constants
 
     private enum Constants {
-        static let carouselHeight: CGFloat = 103
+        static let carouselHeight: CGFloat = 200
     }
 
     // MARK: - IBOutlets
 
     @IBOutlet private weak var productsCarousel: ProductsCarouselView!
     @IBOutlet private weak var productOptionsView: ProductOptionsView!
+    @IBOutlet private weak var indicator: InfiniteInidicator!
 
     // MARK: - Constraints
 
@@ -48,6 +49,11 @@ final class ProductMainInfoViewController: UIViewController {
         output?.viewLoaded()
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        indicator.configure(lenght: headerModels.count)
+    }
+
 }
 
 // MARK: - ProductMainInfoViewInput
@@ -59,11 +65,19 @@ extension ProductMainInfoViewController: ProductMainInfoViewInput {
         configureProductsCarousel()
         productOptionsView.delegate = self
 
-        let mock: ProductHeaderType = .regular(.init(id: "1", title: "Счет Tinkoff Black", balance: "123 324, 23", description: "За текущий период вы получите"))
-        let models = Array(repeating: mock, count: 10)
+        let mock1: ProductHeaderType = .regular(.init(id: "1", title: "Счет Tinkoff Black", balance: "123 324, 23", description: "За текущий период вы получите"))
+        var models = Array(repeating: mock1, count: 3)
+
+        let mock2: ProductHeaderType = .card(.init(id: "2", title: "Альфа Банк", cardModel: CardViewModel(number: "1234", color: .red, logo: nil, typeIcon: CardType.visa.icon)))
+
+        models.append(mock2)
+//        self.
         productsCarousel.configure(with: models,
                                    offset: 0.0,
                                    initialPage: 0)
+
+        headerModels = models
+        indicator.configure(lenght: models.count)
     }
 
 //    func update(with models: [ProductMainInfoViewModel], selectedIndex: Int?) {
@@ -178,6 +192,8 @@ private extension ProductMainInfoViewController {
     func configureProductsCarousel() {
         productsCarousel.didScroll = { [weak self] (stateModel, didEndChange) in
             guard let self = self else { return }
+
+            self.indicator.set(progress: stateModel.progress, from: stateModel.fromPage, to: stateModel.toPage)
             self.productOptionsView.setStateChangeProgress(stateModel.progress)
 
             if self.currentState != stateModel.fromPage {
@@ -186,7 +202,7 @@ private extension ProductMainInfoViewController {
             }
             if self.nextState != stateModel.toPage {
                 self.nextState = stateModel.toPage
-                self.productOptionsView.configureNextState(model: self.optionsModels[self.nextState])
+//                self.productOptionsView.configureNextState(model: self.optionsModels[self.nextState])
             }
 
             let currHeight = self.productOptionsView.getRequiredHeight(for: .current)

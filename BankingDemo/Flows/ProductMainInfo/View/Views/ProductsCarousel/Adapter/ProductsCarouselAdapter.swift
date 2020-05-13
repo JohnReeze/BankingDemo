@@ -7,7 +7,7 @@ import UIKit
 
 typealias ProductStateChangeEvent = (_ model: ProductStateViewModel, _ endDecelerating: Bool) -> Void
 
-final class ProductCarouselAdapter: NSObject {
+final class ProductCarouselAdapter: NSObject, UICollectionViewDelegate {
 
     // MARK: - Constants
 
@@ -102,7 +102,6 @@ extension ProductCarouselAdapter: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(PlainProductCell.self, indexPath: indexPath) else {
             return UICollectionViewCell()
         }
-
         return cell
     }
 
@@ -110,7 +109,7 @@ extension ProductCarouselAdapter: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(CardProductHeaderCell.self, indexPath: indexPath) else {
             return UICollectionViewCell()
         }
-//        cell.configure(with: model, isAlwaysActive: true)
+        cell.configure(title: model.title, cardModel: model.cardModel)
         return cell
     }
 

@@ -31,8 +31,6 @@
 		006E7CFE246B021400458B75 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7CFC246B021300458B75 /* Images.swift */; };
 		006E7D00246B02EE00458B75 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7CFF246B02EE00458B75 /* UIImage.swift */; };
 		006E7D01246B02EE00458B75 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7CFF246B02EE00458B75 /* UIImage.swift */; };
-		006E7D03246B03AE00458B75 /* tinkoffLike.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 006E7D02246B03AE00458B75 /* tinkoffLike.ttf */; };
-		006E7D04246B03AE00458B75 /* tinkoffLike.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 006E7D02246B03AE00458B75 /* tinkoffLike.ttf */; };
 		006E7D06246B042F00458B75 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7D05246B042F00458B75 /* Fonts.swift */; };
 		006E7D07246B042F00458B75 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7D05246B042F00458B75 /* Fonts.swift */; };
 		006E7D0A246B07CC00458B75 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7D09246B07CC00458B75 /* CardView.swift */; };
@@ -43,6 +41,16 @@
 		006E7D11246C098400458B75 /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7D0F246C098400458B75 /* CardType.swift */; };
 		006E7D14246C161000458B75 /* InfiniteIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7D13246C161000458B75 /* InfiniteIndicator.swift */; };
 		006E7D15246C161000458B75 /* InfiniteIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7D13246C161000458B75 /* InfiniteIndicator.swift */; };
+		006E7D18246C3DE300458B75 /* ActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7D17246C3DE300458B75 /* ActionsView.swift */; };
+		006E7D19246C3DE300458B75 /* ActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7D17246C3DE300458B75 /* ActionsView.swift */; };
+		006E7D1E246DCEE700458B75 /* tinkoffLike.otf in Resources */ = {isa = PBXBuildFile; fileRef = 006E7D1D246DCEE700458B75 /* tinkoffLike.otf */; };
+		006E7D1F246DCEE700458B75 /* tinkoffLike.otf in Resources */ = {isa = PBXBuildFile; fileRef = 006E7D1D246DCEE700458B75 /* tinkoffLike.otf */; };
+		006E7D21246DD9D000458B75 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7D20246DD9D000458B75 /* UIButton.swift */; };
+		006E7D22246DD9D000458B75 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7D20246DD9D000458B75 /* UIButton.swift */; };
+		006E7D25246DF3E100458B75 /* CenteredImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7D24246DF3E100458B75 /* CenteredImageButton.swift */; };
+		006E7D26246DF3E100458B75 /* CenteredImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7D24246DF3E100458B75 /* CenteredImageButton.swift */; };
+		006E7D28246DF42A00458B75 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7D27246DF42A00458B75 /* String.swift */; };
+		006E7D29246DF42A00458B75 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7D27246DF42A00458B75 /* String.swift */; };
 		0094DF8724683C5100CF3874 /* DetailProductModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094DF7724683C5000CF3874 /* DetailProductModuleConfigurator.swift */; };
 		0094DF8824683C5100CF3874 /* DetailProductModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094DF7724683C5000CF3874 /* DetailProductModuleConfigurator.swift */; };
 		0094DF8924683C5100CF3874 /* DetailProductViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094DF7924683C5000CF3874 /* DetailProductViewInput.swift */; };
@@ -153,12 +161,16 @@
 		00675379246719CF00B035A6 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		006E7CFC246B021300458B75 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		006E7CFF246B02EE00458B75 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		006E7D02246B03AE00458B75 /* tinkoffLike.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tinkoffLike.ttf; sourceTree = "<group>"; };
 		006E7D05246B042F00458B75 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		006E7D09246B07CC00458B75 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		006E7D0C246B07F000458B75 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		006E7D0F246C098400458B75 /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardType.swift; sourceTree = "<group>"; };
 		006E7D13246C161000458B75 /* InfiniteIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteIndicator.swift; sourceTree = "<group>"; };
+		006E7D17246C3DE300458B75 /* ActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsView.swift; sourceTree = "<group>"; };
+		006E7D1D246DCEE700458B75 /* tinkoffLike.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tinkoffLike.otf; sourceTree = "<group>"; };
+		006E7D20246DD9D000458B75 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		006E7D24246DF3E100458B75 /* CenteredImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteredImageButton.swift; sourceTree = "<group>"; };
+		006E7D27246DF42A00458B75 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		0094DF7724683C5000CF3874 /* DetailProductModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailProductModuleConfigurator.swift; sourceTree = "<group>"; };
 		0094DF7924683C5000CF3874 /* DetailProductViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailProductViewInput.swift; sourceTree = "<group>"; };
 		0094DF7A24683C5000CF3874 /* DetailProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailProductViewController.xib; sourceTree = "<group>"; };
@@ -271,6 +283,7 @@
 			children = (
 				0067536F2467130900B035A6 /* Array.swift */,
 				006753722467138A00B035A6 /* Optional.swift */,
+				006E7D27246DF42A00458B75 /* String.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -299,6 +312,22 @@
 				006E7D13246C161000458B75 /* InfiniteIndicator.swift */,
 			);
 			path = InifiniteCarouselIndicator;
+			sourceTree = "<group>";
+		};
+		006E7D16246C3DD200458B75 /* ActionsView */ = {
+			isa = PBXGroup;
+			children = (
+				006E7D17246C3DE300458B75 /* ActionsView.swift */,
+			);
+			path = ActionsView;
+			sourceTree = "<group>";
+		};
+		006E7D23246DF3D100458B75 /* CenteredImageButton */ = {
+			isa = PBXGroup;
+			children = (
+				006E7D24246DF3E100458B75 /* CenteredImageButton.swift */,
+			);
+			path = CenteredImageButton;
 			sourceTree = "<group>";
 		};
 		0094DF7624683C5000CF3874 /* Configurator */ = {
@@ -503,6 +532,7 @@
 				001A356B246858A5006DECCE /* UICollectionView.swift */,
 				001A356F24686728006DECCE /* UIView.swift */,
 				006E7CFF246B02EE00458B75 /* UIImage.swift */,
+				006E7D20246DD9D000458B75 /* UIButton.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -538,6 +568,8 @@
 		28A05C464011336A91C119EB /* Reusable Layer */ = {
 			isa = PBXGroup;
 			children = (
+				006E7D23246DF3D100458B75 /* CenteredImageButton */,
+				006E7D16246C3DD200458B75 /* ActionsView */,
 				006E7D12246C15B200458B75 /* InifiniteCarouselIndicator */,
 				006E7D08246B07BD00458B75 /* CardView */,
 				00675378246719CF00B035A6 /* DesignableView */,
@@ -625,7 +657,7 @@
 		61F91E8C169BAAD1404C24DA /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				006E7D02246B03AE00458B75 /* tinkoffLike.ttf */,
+				006E7D1D246DCEE700458B75 /* tinkoffLike.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -870,10 +902,10 @@
 				3FE5CC1BBBC3B9E2A0142FF2 /* Assets.xcassets in Resources */,
 				0094DFF0246850B800CF3874 /* CardProductHeaderCell.xib in Resources */,
 				0094DFE8246850B800CF3874 /* ProductsCarouselView.xib in Resources */,
-				006E7D03246B03AE00458B75 /* tinkoffLike.ttf in Resources */,
 				0094DFEE246850B800CF3874 /* PlainProductCell.xib in Resources */,
 				CBB0A18BE798D916666AA163 /* LaunchScreen.xib in Resources */,
 				E2B7EBBD6022268CB1829E90 /* Localizable.strings in Resources */,
+				006E7D1E246DCEE700458B75 /* tinkoffLike.otf in Resources */,
 				006E7D0D246B07F000458B75 /* CardView.xib in Resources */,
 				0094DF8B24683C5100CF3874 /* DetailProductViewController.xib in Resources */,
 				0094DFDE246850B800CF3874 /* ProductMainInfoViewController.xib in Resources */,
@@ -888,10 +920,10 @@
 				FA76F8FF42586727EDCA3CBC /* Assets.xcassets in Resources */,
 				0094DFF1246850B800CF3874 /* CardProductHeaderCell.xib in Resources */,
 				0094DFE9246850B800CF3874 /* ProductsCarouselView.xib in Resources */,
-				006E7D04246B03AE00458B75 /* tinkoffLike.ttf in Resources */,
 				0094DFEF246850B800CF3874 /* PlainProductCell.xib in Resources */,
 				80C7A39DCED8935D8132D2BF /* LaunchScreen.xib in Resources */,
 				24A1D0D137923CDBA634000E /* Localizable.strings in Resources */,
+				006E7D1F246DCEE700458B75 /* tinkoffLike.otf in Resources */,
 				006E7D0E246B07F000458B75 /* CardView.xib in Resources */,
 				0094DF8C24683C5100CF3874 /* DetailProductViewController.xib in Resources */,
 				0094DFDF246850B800CF3874 /* ProductMainInfoViewController.xib in Resources */,
@@ -1077,6 +1109,7 @@
 				0094DF9024683C5100CF3874 /* DetailProductViewOutput.swift in Sources */,
 				0094DFCF246850B800CF3874 /* ProductMainInfoOutput.swift in Sources */,
 				0094DFCB246850B800CF3874 /* ProductMainInfoInput.swift in Sources */,
+				006E7D22246DD9D000458B75 /* UIButton.swift in Sources */,
 				0094DFDB246850B800CF3874 /* ProductMainInfoViewInput.swift in Sources */,
 				0094DF8824683C5100CF3874 /* DetailProductModuleConfigurator.swift in Sources */,
 				0094DFF3246850B800CF3874 /* CardProductHeaderCell.swift in Sources */,
@@ -1095,15 +1128,18 @@
 				0094DF8E24683C5100CF3874 /* DetailProductViewController.swift in Sources */,
 				006753712467130900B035A6 /* Array.swift in Sources */,
 				0094DFFB246850B800CF3874 /* ProductMainInfoRouterInput.swift in Sources */,
+				006E7D26246DF3E100458B75 /* CenteredImageButton.swift in Sources */,
 				0094DFE3246850B800CF3874 /* ProductOptionsView.swift in Sources */,
 				0094DF9F24683CB800CF3874 /* ModuleTransitionable.swift in Sources */,
 				0094DF9824683C5100CF3874 /* DetailProductRouter.swift in Sources */,
 				0094DFD7246850B800CF3874 /* ProductOptionsViewModel.swift in Sources */,
+				006E7D19246C3DE300458B75 /* ActionsView.swift in Sources */,
 				0067536624670D9E00B035A6 /* SoftUnwrapp.swift in Sources */,
 				0094DFE7246850B800CF3874 /* ProductOptionView.swift in Sources */,
 				0094DFCD246850B800CF3874 /* ProductMainInfoPresenter.swift in Sources */,
 				5D4A7B297D28C93B76357970 /* Strings.swift in Sources */,
 				B0D86F6FD09421EA4FDB3C64 /* UIApplication.swift in Sources */,
+				006E7D29246DF42A00458B75 /* String.swift in Sources */,
 				0094DFD9246850B800CF3874 /* ContentScrollableHeader.swift in Sources */,
 				0094DFF5246850B800CF3874 /* ProductsCarouselAdapter.swift in Sources */,
 			);
@@ -1140,6 +1176,7 @@
 				0094DF8F24683C5100CF3874 /* DetailProductViewOutput.swift in Sources */,
 				0094DFCE246850B800CF3874 /* ProductMainInfoOutput.swift in Sources */,
 				0094DFCA246850B800CF3874 /* ProductMainInfoInput.swift in Sources */,
+				006E7D21246DD9D000458B75 /* UIButton.swift in Sources */,
 				0094DFDA246850B800CF3874 /* ProductMainInfoViewInput.swift in Sources */,
 				0094DF8724683C5100CF3874 /* DetailProductModuleConfigurator.swift in Sources */,
 				0094DFF2246850B800CF3874 /* CardProductHeaderCell.swift in Sources */,
@@ -1158,15 +1195,18 @@
 				0094DF8D24683C5100CF3874 /* DetailProductViewController.swift in Sources */,
 				006753702467130900B035A6 /* Array.swift in Sources */,
 				0094DFFA246850B800CF3874 /* ProductMainInfoRouterInput.swift in Sources */,
+				006E7D25246DF3E100458B75 /* CenteredImageButton.swift in Sources */,
 				0094DFE2246850B800CF3874 /* ProductOptionsView.swift in Sources */,
 				0094DF9E24683CB800CF3874 /* ModuleTransitionable.swift in Sources */,
 				0094DF9724683C5100CF3874 /* DetailProductRouter.swift in Sources */,
 				0094DFD6246850B800CF3874 /* ProductOptionsViewModel.swift in Sources */,
+				006E7D18246C3DE300458B75 /* ActionsView.swift in Sources */,
 				0067536524670D9E00B035A6 /* SoftUnwrapp.swift in Sources */,
 				0094DFE6246850B800CF3874 /* ProductOptionView.swift in Sources */,
 				0094DFCC246850B800CF3874 /* ProductMainInfoPresenter.swift in Sources */,
 				15E296EC10446AA26E4FF535 /* Strings.swift in Sources */,
 				087BD819C3B10C1A40483D45 /* UIApplication.swift in Sources */,
+				006E7D28246DF42A00458B75 /* String.swift in Sources */,
 				0094DFD8246850B800CF3874 /* ContentScrollableHeader.swift in Sources */,
 				0094DFF4246850B800CF3874 /* ProductsCarouselAdapter.swift in Sources */,
 			);
@@ -1190,14 +1230,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Debug";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UC57GQ2RGX;
+				DEVELOPMENT_TEAM = W665J5LCB9;
 				INFOPLIST_FILE = BankingDemo/Application/Info/Debug/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.dmitryd20.VK-Files1";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.mmm.bankingdemo;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1229,14 +1269,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Debug";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UC57GQ2RGX;
+				DEVELOPMENT_TEAM = W665J5LCB9;
 				INFOPLIST_FILE = BankingDemo/Application/Info/Debug/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.dmitryd20.VK-Files1";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.mmm.bankingdemo;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -5,49 +5,16 @@
 
 import UIKit
 
-enum ProductFastActionType: Int {
-    case requisites
-    case replenish
-    case pay
-    case replenishFromCard
-    case payByCard
-}
-
 final class ProductOptionView: DesignableView {
-
-    // MARK: - Constants
-
-    private enum Constants {
-        static let stackViewSpacing: CGFloat = 16
-        static let actionsInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        static let actionHeight: CGFloat = 40
-        static let minViewHeight: CGFloat = 40
-        static let cardTutorialInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-    }
-
-    // MARK: - Nested types
-
-    private struct ContentInfo {
-        let view: UIView
-        let topConstraint: NSLayoutConstraint
-        let lastOffset: CGFloat
-        let defaultBottomOffset: CGFloat
-
-        init(view: UIView,
-             topConstraint: NSLayoutConstraint,
-             lastOffset: CGFloat = 0,
-             defaultBottomOffset: CGFloat = 0) {
-            self.view = view
-            self.topConstraint = topConstraint
-            self.lastOffset = lastOffset
-            self.defaultBottomOffset = defaultBottomOffset
-        }
-
-    }
 
     // MARK: - IBOutlets
 
+    @IBOutlet private weak var actionsView: ActionsView!
+
     // MARK: - Constraints
+
+    @IBOutlet private weak var actionsWidthConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var actionsHeightConstraint: NSLayoutConstraint!
 
     // MARK: - Properties
 
@@ -56,15 +23,7 @@ final class ProductOptionView: DesignableView {
 
     // MARK: - Private Properties
 
-    private var reusableButtons = [ProductFastActionType: UIButton]()
-    private var topOffset: CGFloat = 0
-    private var model: ProductOptionsViewModel?
-
-    private lazy var contentOffsets: [ContentInfo] = {
-        return [
-
-        ]
-    }()
+    private var model = ProductOptionsViewModel(actions: [])
 
     // MARK: - UIView
 
@@ -88,29 +47,21 @@ final class ProductOptionView: DesignableView {
     // MARK: - Internal Methodss
 
     func configure(with model: ProductOptionsViewModel) {
-        self.topOffset = model.topOffset
         self.model = model
-    }
-
-    func updateTopOffset(_ newTopOffset: CGFloat) {
-        self.topOffset = newTopOffset
-
-    }
-
-    func update(with newModel: ProductOptionsViewModel, animated: Bool) {
-
+        actionsView.configure(with: model.actions)
     }
 
     func getRequiredHeight() -> CGFloat {
-        guard let lastBlock = contentOffsets.last(where: { $0.view.alpha == 1 }) else {
-            return Constants.minViewHeight
-        }
-        let reqiuredHeight = [
-            lastBlock.lastOffset,
-            lastBlock.topConstraint.constant,
-            lastBlock.view.frame.height
-        ].reduce(0, +)
-        return max(reqiuredHeight, Constants.minViewHeight)
+        return 200
+    }
+
+    func setActionsSize(_ size: CGSize) {
+        actionsWidthConstraint.constant = size.width
+        actionsHeightConstraint.constant = size.height
+    }
+
+    func setActionsAplha(_ newValue: CGFloat) {
+        actionsView.setActionsApla(newValue)
     }
 
 }
@@ -121,7 +72,6 @@ private extension ProductOptionView {
 
     func setupInitialState() {
         self.backgroundColor = .clear
-
     }
 
 }

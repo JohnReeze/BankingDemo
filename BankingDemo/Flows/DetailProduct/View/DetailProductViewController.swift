@@ -61,6 +61,8 @@ final class DetailProductViewController: UIViewController, ModuleTransitionable 
     @IBOutlet private weak var headerConstraint: NSLayoutConstraint!
     @IBOutlet private weak var pagesConstraint: NSLayoutConstraint!
 
+//    private let
+
     // MARK: - UIViewController
 
     override func viewDidLoad() {
@@ -90,10 +92,6 @@ final class DetailProductViewController: UIViewController, ModuleTransitionable 
             return
         }
         handleMainScrollViewOffsetChange(mainScrollView.contentOffset.y)
-    }
-
-    deinit {
-//        mainScrollView.removeObserver(self, forKeyPath: Constants.positionKeyPath)
     }
 
 }

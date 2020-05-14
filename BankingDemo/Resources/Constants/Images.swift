@@ -20,6 +20,9 @@
 public enum Styles {
   public enum Colors {
 
+    public static let darkGrdientEnd = ColorAsset(name: "Colors/darkGrdientEnd")
+    public static let darkGrdientStart = ColorAsset(name: "Colors/darkGrdientStart")
+    public static let indicator = ColorAsset(name: "Colors/indicator")
     public static let main = ColorAsset(name: "Colors/main")
   }
   public enum Images {
@@ -29,6 +32,9 @@ public enum Styles {
       public static let mir = ImageAsset(name: "Images/CardType/mir")
       public static let visa = ImageAsset(name: "Images/CardType/visa")
     }
+    public static let pay = ImageAsset(name: "Images/pay")
+    public static let plus = ImageAsset(name: "Images/plus")
+    public static let requisites = ImageAsset(name: "Images/requisites")
     public static let settings = ImageAsset(name: "Images/settings")
   }
 }

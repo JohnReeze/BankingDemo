@@ -19,14 +19,12 @@ final class InfiniteInidicator: UIView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        indicatorView.backgroundColor = .red
-        indicatorView.frame = .init(x: 0, y: 0, width: inidicatorLenght, height: self.frame.height)
-        supportIndicatorView.backgroundColor = .red
-        supportIndicatorView.frame = .init(x: 0, y: 0, width: inidicatorLenght, height: self.frame.height)
-        self.addSubview(indicatorView)
-        self.addSubview(supportIndicatorView)
-        indicatorView.layer.cornerRadius = indicatorView.frame.height / 2
-        supportIndicatorView.layer.cornerRadius = supportIndicatorView.frame.height / 2
+        [indicatorView, supportIndicatorView].forEach { view in
+            view.backgroundColor = Styles.Colors.indicator.color
+            view.frame = .init(x: 0, y: 0, width: inidicatorLenght, height: self.frame.height)
+            self.addSubview(view)
+            view.layer.cornerRadius = indicatorView.frame.height / 2
+        }
         self.layer.masksToBounds = true
     }
 
@@ -58,15 +56,6 @@ final class InfiniteInidicator: UIView {
             indicatorView.setX(indexOffset + tmp)
         }
 
-    }
-
-}
-extension UIView {
-
-    func setX(_ x: CGFloat) {
-        var frame: CGRect = self.frame
-        frame.origin.x = x
-        self.frame = frame
     }
 
 }

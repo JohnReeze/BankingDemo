@@ -6,6 +6,5 @@
 import UIKit
 
 struct ProductOptionsViewModel {
-    let topOffset: CGFloat
-    let actions: [ProductFastActionType]?
+    let actions: [ProductFastActionType]
 }

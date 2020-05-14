@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "account_details_icon_20x20_@1x.png",
+      "filename" : "account_actions_fill_48x48_@1x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "account_details_icon_20x20_@2x.png",
+      "filename" : "account_actions_fill_48x48_@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "account_details_icon_20x20_@3x.png",
+      "filename" : "account_actions_fill_48x48_@3x.png",
       "scale" : "3x"
     }
   ],

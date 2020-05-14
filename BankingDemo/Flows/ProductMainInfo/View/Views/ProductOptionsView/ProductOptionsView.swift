@@ -15,8 +15,6 @@ protocol ProductOptionsViewDelegate: class {
 
 final class ProductOptionsView: UIView {
 
-    // MARK: - Enums
-
     enum State {
         case current
         case next
@@ -46,44 +44,47 @@ final class ProductOptionsView: UIView {
     // MARK: - Private Properties
 
     private lazy var currentStateView = ProductOptionView(frame: .zero)
-    private lazy var nextStateView = ProductOptionView(frame: .zero)
+
+    private var currentState = CGSize()
+    private var nextState = CGSize()
+    private var currentModel = ProductOptionsViewModel(actions: [])
+    private var nextModel = ProductOptionsViewModel(actions: [])
 
     // MARK: - Internal Methods
 
     func getRequiredHeight(for state: State) -> CGFloat {
-        switch state {
-        case .current:
-            return currentStateView.getRequiredHeight()
-        case .next:
-            return nextStateView.getRequiredHeight()
-        }
+        return currentStateView.getRequiredHeight()
     }
 
     func configureCurrentState(model: ProductOptionsViewModel) {
         currentStateView.configure(with: model)
-    }
-
-    func updateCurrentState(topOffset: CGFloat) {
-        currentStateView.updateTopOffset(topOffset)
-    }
-
-    func updateCurrentState(with model: ProductOptionsViewModel, animated: Bool) {
-        currentStateView.update(with: model, animated: animated)
+        self.currentModel = model
+        self.currentState = ActionsView.getRequiredSize(for: model.actions)
     }
 
     func configureNextState(model: ProductOptionsViewModel) {
-        nextStateView.configure(with: model)
+        self.nextModel = model
+        self.nextState = ActionsView.getRequiredSize(for: model.actions)
     }
 
     func setStateChangeProgress(_ progress: Double) {
-        currentStateView.alpha = CGFloat(1 - progress * 2)
-        nextStateView.alpha = CGFloat(2 * progress - 1)
+        let cgProgress = CGFloat(progress)
+        let width = currentState.width - (currentState.width - nextState.width) * cgProgress
+        let height = currentState.height - (currentState.height - nextState.height) * cgProgress
+        currentStateView.setActionsSize(CGSize(width: width, height: height))
+
+        if progress > 0.5 {
+            currentStateView.configure(with: nextModel)
+            currentStateView.setActionsAplha(CGFloat(2 * progress - 1))
+        } else {
+            currentStateView.setActionsAplha(CGFloat(1 - progress * 2))
+            currentStateView.configure(with: currentModel)
+        }
     }
 
     func finishStateChange() {
-        currentStateView.alpha = 0
-        nextStateView.alpha = 1
-        swap(&currentStateView, &nextStateView)
+        currentState = nextState
+        currentModel = nextModel
     }
 
 }
@@ -94,14 +95,11 @@ private extension ProductOptionsView {
 
     func setupInitalState() {
         self.backgroundColor = .clear
-        nextStateView.alpha = 0
-        for optionView in [currentStateView, nextStateView] {
-            optionView.translatesAutoresizingMaskIntoConstraints = false
-            addSubview(optionView)
-//            optionView.fillSuperview()
-            optionView.didSelectCard = weak(self) { $0.delegate?.didSelectCard(at: $1) }
-            optionView.didSelectAction = weak(self) { $0.delegate?.didSelectAction($1) }
-        }
+        currentStateView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(currentStateView)
+        currentStateView.fillSuperview()
+        currentStateView.didSelectCard = weak(self) { $0.delegate?.didSelectCard(at: $1) }
+        currentStateView.didSelectAction = weak(self) { $0.delegate?.didSelectAction($1) }
     }
 
 }

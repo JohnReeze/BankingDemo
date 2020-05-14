@@ -1,1 +1,6 @@
 
+"Actions.requisites" = "Реквизиты";
+"Actions.pay" = "Оплатить";
+"Actions.replanish" = "Пополнить";
+"Actions.replenishFromCard" = "Пополнить с\U00A0этой карты";
+"Actions.payByCard" = "Оплатить с\U00A0этой карты";

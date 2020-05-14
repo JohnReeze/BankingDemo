@@ -16,11 +16,11 @@
 
 // swiftlint:disable identifier_name line_length type_body_length
 public enum FontFamily {
-  public enum FranxurterTotally {
-    public static let medium = FontConvertible(name: "FranxurterTotallyMedium", family: "Franxurter Totally", path: "tinkoffLike.ttf")
-    public static let all: [FontConvertible] = [medium]
+  public enum SFProRounded {
+    public static let bold = FontConvertible(name: "SFProRounded-Bold", family: "SF Pro Rounded", path: "tinkoffLike.otf")
+    public static let all: [FontConvertible] = [bold]
   }
-  public static let allCustomFonts: [FontConvertible] = [FranxurterTotally.all].flatMap { $0 }
+  public static let allCustomFonts: [FontConvertible] = [SFProRounded.all].flatMap { $0 }
   public static func registerAllCustomFonts() {
     allCustomFonts.forEach { $0.register() }
   }

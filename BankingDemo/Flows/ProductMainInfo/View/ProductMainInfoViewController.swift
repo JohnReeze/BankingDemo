@@ -78,6 +78,14 @@ extension ProductMainInfoViewController: ProductMainInfoViewInput {
 
         headerModels = models
         indicator.configure(lenght: models.count)
+
+        optionsModels = [
+            .init(actions: [.requisites, .replenish, .pay]),
+            .init(actions: [.requisites, .pay]),
+            .init(actions: [.payByCard, .replenishFromCard]),
+            .init(actions: [.requisites, .pay])
+        ]
+        productOptionsView.configureCurrentState(model: .init(actions: [.requisites, .replenish, .pay]))
     }
 
 //    func update(with models: [ProductMainInfoViewModel], selectedIndex: Int?) {
@@ -106,41 +114,6 @@ extension ProductMainInfoViewController: ProductMainInfoViewInput {
 //        productOptionsView.configureNextState(model: optionsModels[currentState])
 //        let currHeight = self.productOptionsView.getRequiredHeight(for: .current)
 //        self.heightConstraint?.constant = Constants.carouselHeight + currHeight
-//    }
-
-//    func update(model: ProductMainInfoViewModel, animated: Bool) {
-//        guard let index = self.models.firstIndex(where: { $0.id == model.id }) else {
-//            return
-//        }
-//        self.models[index] = model
-//
-//        let headerModel: ProductHeaderType = (model.localCard ~> { .card($0) }) ?? .regular(.init(id: model.id,
-//                                                                                                  balance: model.balance,
-//                                                                                                  descriptions: model.desciptions,
-//                                                                                                  isHidden: model.isHiddenBalance))
-//
-//        let requiredHeight = productsCarousel.getRequiredHeight(for: headerModel)
-//        let optionModel = ProductOptionsViewModel(topOffset: max(0, requiredHeight - Constants.carouselHeight),
-//                                                  actions: model.productActions,
-//                                                  cards: (model.cards ?? [], model.selectedCard),
-//                                                  cardsStatus: model.cardsStatus)
-//        guard index == currentState else {
-//            self.headerModels[index] = headerModel
-//            self.optionsModels[index] = optionModel
-//            productsCarousel.update(with: headerModel, for: index, animated: false)
-//            return
-//        }
-//
-//        let sizeChange = weak(self) {
-//            $0.productsCarousel.update(with: headerModel, for: index, animated: animated)
-//            $0.productOptionsView.updateCurrentState(with: optionModel, animated: animated)
-//            let currHeight = self.productOptionsView.getRequiredHeight(for: .current)
-//            self.heightConstraint?.constant = Constants.carouselHeight + currHeight
-//        }
-//        animationBlock?(sizeChange)
-//
-//        self.headerModels[index] = headerModel
-//        self.optionsModels[index] = optionModel
 //    }
 
     func setLoading(_ isLoading: Bool) {
@@ -194,15 +167,17 @@ private extension ProductMainInfoViewController {
             guard let self = self else { return }
 
             self.indicator.set(progress: stateModel.progress, from: stateModel.fromPage, to: stateModel.toPage)
-            self.productOptionsView.setStateChangeProgress(stateModel.progress)
 
             if self.currentState != stateModel.fromPage {
                 self.productOptionsView.finishStateChange()
                 self.currentState = stateModel.fromPage
             }
+
+            self.productOptionsView.setStateChangeProgress(stateModel.progress)
+
             if self.nextState != stateModel.toPage {
                 self.nextState = stateModel.toPage
-//                self.productOptionsView.configureNextState(model: self.optionsModels[self.nextState])
+                self.productOptionsView.configureNextState(model: self.optionsModels[self.nextState])
             }
 
             let currHeight = self.productOptionsView.getRequiredHeight(for: .current)

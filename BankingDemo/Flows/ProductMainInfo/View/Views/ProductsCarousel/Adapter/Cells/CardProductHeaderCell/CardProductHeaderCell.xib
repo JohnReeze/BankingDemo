@@ -62,6 +62,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Images/settings" width="256" height="256"/>
+        <image name="Images/settings" width="20" height="20"/>
     </resources>
 </document>

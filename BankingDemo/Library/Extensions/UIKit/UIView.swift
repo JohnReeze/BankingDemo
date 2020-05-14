@@ -71,4 +71,10 @@ public extension UIView {
         }
     }
 
+    func setX(_ x: CGFloat) {
+        var frame: CGRect = self.frame
+        frame.origin.x = x
+        self.frame = frame
+    }
+
 }

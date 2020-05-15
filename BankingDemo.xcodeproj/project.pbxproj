@@ -11,6 +11,8 @@
 		001A356D246858A5006DECCE /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001A356B246858A5006DECCE /* UICollectionView.swift */; };
 		001A357024686728006DECCE /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001A356F24686728006DECCE /* UIView.swift */; };
 		001A357124686728006DECCE /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001A356F24686728006DECCE /* UIView.swift */; };
+		003343E4246EC6620058F5AD /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003343E3246EC6620058F5AD /* UINavigationController.swift */; };
+		003343E5246EC6620058F5AD /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003343E3246EC6620058F5AD /* UINavigationController.swift */; };
 		0067536224670CD200B035A6 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067536124670CD200B035A6 /* Weak.swift */; };
 		0067536324670CD200B035A6 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067536124670CD200B035A6 /* Weak.swift */; };
 		0067536524670D9E00B035A6 /* SoftUnwrapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067536424670D9E00B035A6 /* SoftUnwrapp.swift */; };
@@ -151,6 +153,7 @@
 		0007069FF5F8CA56B77366DE /* UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTests.swift; sourceTree = "<group>"; };
 		001A356B246858A5006DECCE /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		001A356F24686728006DECCE /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		003343E3246EC6620058F5AD /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		0067536124670CD200B035A6 /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 		0067536424670D9E00B035A6 /* SoftUnwrapp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftUnwrapp.swift; sourceTree = "<group>"; };
 		0067536824670EA300B035A6 /* CollaborativeScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollaborativeScrollView.swift; sourceTree = "<group>"; };
@@ -533,6 +536,7 @@
 				001A356F24686728006DECCE /* UIView.swift */,
 				006E7CFF246B02EE00458B75 /* UIImage.swift */,
 				006E7D20246DD9D000458B75 /* UIButton.swift */,
+				003343E3246EC6620058F5AD /* UINavigationController.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1136,6 +1140,7 @@
 				006E7D19246C3DE300458B75 /* ActionsView.swift in Sources */,
 				0067536624670D9E00B035A6 /* SoftUnwrapp.swift in Sources */,
 				0094DFE7246850B800CF3874 /* ProductOptionView.swift in Sources */,
+				003343E5246EC6620058F5AD /* UINavigationController.swift in Sources */,
 				0094DFCD246850B800CF3874 /* ProductMainInfoPresenter.swift in Sources */,
 				5D4A7B297D28C93B76357970 /* Strings.swift in Sources */,
 				B0D86F6FD09421EA4FDB3C64 /* UIApplication.swift in Sources */,
@@ -1203,6 +1208,7 @@
 				006E7D18246C3DE300458B75 /* ActionsView.swift in Sources */,
 				0067536524670D9E00B035A6 /* SoftUnwrapp.swift in Sources */,
 				0094DFE6246850B800CF3874 /* ProductOptionView.swift in Sources */,
+				003343E4246EC6620058F5AD /* UINavigationController.swift in Sources */,
 				0094DFCC246850B800CF3874 /* ProductMainInfoPresenter.swift in Sources */,
 				15E296EC10446AA26E4FF535 /* Strings.swift in Sources */,
 				087BD819C3B10C1A40483D45 /* UIApplication.swift in Sources */,

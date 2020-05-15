@@ -20,7 +20,7 @@ final class DetailProductViewController: UIViewController, ModuleTransitionable 
         static let positionKeyPath = "contentOffset"
         static let titleViewDefaultWidth: CGFloat = 200
         static let titleViewDefaultHeight: CGFloat = 44
-        static let navbarAnimationTresholdDefault: CGFloat = 64
+        static let navbarSettingsTreshold: CGFloat = 36
     }
 
     // MARK: - IBOutlets
@@ -43,6 +43,8 @@ final class DetailProductViewController: UIViewController, ModuleTransitionable 
     private var refreshControl: UIRefreshControl?
 //    private var navigationTitle: DualNavBarTitleView?
     private var scrollDirection: ScrollDirection?
+
+    private var settingsIsShowed = false
 
     private var maxHeaderScrollOffset: CGFloat {
         return headerConstraint.constant
@@ -113,20 +115,20 @@ extension DetailProductViewController: DetailProductViewInput {
 
 }
 
-// MARK: - ContentScrollable
+ // MARK: - ContentScrollable
 
-//extension DetailProductViewController: ContentScrollable {
-//
-//    func didScroll(in scrollView: UIScrollView) {
-//        handleScroll(scrollView)
-//    }
-//
-//    func didChangeSource(newSource: UIScrollView) {
-//        self.innerScrollView = newSource
-//        tryToRestoreScrollPosition(for: newSource)
-//    }
-//
-//}
+extension DetailProductViewController: ContentScrollable {
+
+    func didScroll(in scrollView: UIScrollView) {
+        handleScroll(scrollView)
+    }
+
+    func didChangeSource(newSource: UIScrollView) {
+        self.innerScrollView = newSource
+        tryToRestoreScrollPosition(for: newSource)
+    }
+
+}
 
 // MARK: - UIScrollViewDelegate
 
@@ -136,13 +138,24 @@ extension DetailProductViewController: UIScrollViewDelegate {
         scrollDirection = mainScrollView.lastContentOffset.y < scrollView.contentOffset.y ? .up : .down
         headerContent?.setContentOffset(scrollView.contentOffset.y)
         handleScroll(mainScrollView)
-        if scrollView.isDecelerating {
-            tryToAutoCompleteScroll(scrollView)
-        }
+        showSettingsIfNeeded(offset: scrollView.contentOffset.y)
     }
 
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        tryToAutoCompleteScroll(scrollView)
+    func showSettingsIfNeeded(offset: CGFloat) {
+        guard let customView = navigationItem.rightBarButtonItem?.customView else {
+            return
+        }
+        if offset > Constants.navbarSettingsTreshold && !settingsIsShowed {
+            settingsIsShowed = true
+            UIView.animate(withDuration: Durations.animation) {
+                customView.transform = CGAffineTransform(rotationAngle: 3 * .pi).scaledBy(x: 1, y: 1)
+            }
+        } else if offset <= Constants.navbarSettingsTreshold && settingsIsShowed {
+            settingsIsShowed = false
+            UIView.animate(withDuration: Durations.animation) {
+                customView.transform = CGAffineTransform(rotationAngle: 2 * .pi).scaledBy(x: 0.01, y: 0.01)
+            }
+        }
     }
 
     private func handleScroll(_ scrollView: UIScrollView) {
@@ -198,26 +211,6 @@ extension DetailProductViewController: UIScrollViewDelegate {
 //        navigationTitle?.contentViewOffsetDidChange(yOffset: yOffset, treshold: Constants.navbarAnimationTresholdDefault)
     }
 
-    func tryToAutoCompleteScroll(_ scrollView: UIScrollView) {
-        guard
-            let direction = scrollDirection,
-            let headerHeight = headerConstraint?.constant,
-            scrollView.contentOffset.y > 0,
-            scrollView.contentOffset.y < headerHeight
-        else {
-            return
-        }
-
-        UIView.animate(withDuration: Durations.animation, animations: {
-            switch direction {
-            case .up:
-                self.mainScrollView.contentOffset.y = headerHeight
-            case .down:
-                self.mainScrollView.contentOffset.y = 0
-            }
-        })
-    }
-
     func tryToRestoreScrollPosition(for scrollView: UIScrollView) {
         guard scrollView.contentOffset.y > .zero && mainScrollView.contentOffset.y != maxHeaderScrollOffset else {
             return
@@ -230,23 +223,12 @@ extension DetailProductViewController: UIScrollViewDelegate {
 
 }
 
-// MARK: - UIDocumentInteractionControllerDelegate
-
-extension DetailProductViewController: UIDocumentInteractionControllerDelegate {
-
-    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
-        return self
-    }
-
-}
-
 // MARK: - Configuration
 
 private extension DetailProductViewController {
 
     func configureUI() {
         configureNavigationBar()
-        configureGradient()
         configureRefreshControl()
         setupMainScrollView()
         setupHeader()
@@ -264,25 +246,21 @@ private extension DetailProductViewController {
         mainScrollView.scrollsToTop = false
     }
 
-    func configureGradient() {
-
-    }
-
     func configureRefreshControl() {
         refreshControl = UIRefreshControl()
-//        refreshControl?.tintColor = ColorName.mainTheme.color
         refreshControl?.addTarget(self, action: #selector(refreshProductList), for: .valueChanged)
         refreshControl ~> { mainScrollView.addSubview($0) }
     }
 
     func configureNavigationBar() {
-//        let titleView = DualNavBarTitleView(frame: CGRect(x: 0,
-//                                                          y: 0,
-//                                                          width: Constants.titleViewDefaultWidth,
-//                                                          height: Constants.titleViewDefaultHeight))
-//        navigationItem.titleView = titleView
-//        navigationTitle = titleView
-//        addBackBarButton(selector: #selector(close))
+        navigationController?.applyStandartNavigationBarStyle()
+        let settings = UIButton(type: .custom)
+        settings.setImage(Styles.Images.settings.image.withRenderingMode(.alwaysOriginal), for: .normal)
+        settings.frame = CGRect(x: 0.0, y: 0.0, width: 35.0, height: 35.0)
+        settings.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settings)
+        // TODO: remove test code and make title view
+        title = "Счет Tinkoff"
     }
 
     func setupHeader() {

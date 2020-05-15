@@ -69,5 +69,4 @@ extension DetailProductPresenter: ProductMainInfoOutput {
         
     }
 
-
 }

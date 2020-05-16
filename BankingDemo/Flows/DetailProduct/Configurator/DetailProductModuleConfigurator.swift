@@ -17,12 +17,17 @@ final class DetailProductModuleConfigurator {
 
         let (headerView, headerInput) = ProductMainInfoModuleConfigurator().configure(rootView: view, output: presenter)
 
+        let (detailedView, detailedInput) = ProductDetailedInfoModuleConfigurator().configure(rootView: view, output: presenter)
+
         presenter.mainContentInput = headerInput
+        presenter.detailedContentInput = detailedInput
         presenter.view = view
         presenter.router = router
 
         view.headerContent = headerView
+        view.mainContent = detailedView
         view.output = presenter
+
         router.view = view
 
         return view

@@ -77,4 +77,16 @@ public extension UIView {
         self.frame = frame
     }
 
+    func getAllSubviews<T: UIView>(from view: UIView) -> [T] {
+        var resultSubviews = [T]()
+        view.subviews.forEach { subview in
+            resultSubviews += getAllSubviews(from: subview) as [T]
+
+            if let currentView = subview as? T {
+                resultSubviews.append(currentView)
+            }
+        }
+        return resultSubviews
+    }
+
 }

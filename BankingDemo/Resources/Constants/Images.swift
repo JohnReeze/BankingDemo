@@ -24,6 +24,7 @@ public enum Styles {
     public static let darkGrdientStart = ColorAsset(name: "Colors/darkGrdientStart")
     public static let indicator = ColorAsset(name: "Colors/indicator")
     public static let main = ColorAsset(name: "Colors/main")
+    public static let mainBlue = ColorAsset(name: "Colors/mainBlue")
   }
   public enum Images {
 
@@ -37,6 +38,7 @@ public enum Styles {
     public static let requisites = ImageAsset(name: "Images/requisites")
     public static let settings = ImageAsset(name: "Images/settings")
   }
+  public static let arrowDown = ImageAsset(name: "arrowDown")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

@@ -34,7 +34,7 @@ final class DetailProductViewController: UIViewController, ModuleTransitionable 
     // MARK: - Properties
 
     var headerContent: ContentScrollableHeader?
-//    var mainContent: ProductDetailedInfoViewProtocol?
+    var mainContent: ProductDetailedInfoViewProtocol?
     var output: DetailProductViewOutput?
 
     // MARK: - Private Properties
@@ -93,6 +93,7 @@ final class DetailProductViewController: UIViewController, ModuleTransitionable 
         guard keyPath == Constants.positionKeyPath else {
             return
         }
+        print(mainScrollView.contentOffset.y)
         handleMainScrollViewOffsetChange(mainScrollView.contentOffset.y)
     }
 
@@ -125,7 +126,6 @@ extension DetailProductViewController: ContentScrollable {
 
     func didChangeSource(newSource: UIScrollView) {
         self.innerScrollView = newSource
-        tryToRestoreScrollPosition(for: newSource)
     }
 
 }
@@ -138,24 +138,6 @@ extension DetailProductViewController: UIScrollViewDelegate {
         scrollDirection = mainScrollView.lastContentOffset.y < scrollView.contentOffset.y ? .up : .down
         headerContent?.setContentOffset(scrollView.contentOffset.y)
         handleScroll(mainScrollView)
-        showSettingsIfNeeded(offset: scrollView.contentOffset.y)
-    }
-
-    func showSettingsIfNeeded(offset: CGFloat) {
-        guard let customView = navigationItem.rightBarButtonItem?.customView else {
-            return
-        }
-        if offset > Constants.navbarSettingsTreshold && !settingsIsShowed {
-            settingsIsShowed = true
-            UIView.animate(withDuration: Durations.animation) {
-                customView.transform = CGAffineTransform(rotationAngle: 3 * .pi).scaledBy(x: 1, y: 1)
-            }
-        } else if offset <= Constants.navbarSettingsTreshold && settingsIsShowed {
-            settingsIsShowed = false
-            UIView.animate(withDuration: Durations.animation) {
-                customView.transform = CGAffineTransform(rotationAngle: 2 * .pi).scaledBy(x: 0.01, y: 0.01)
-            }
-        }
     }
 
     private func handleScroll(_ scrollView: UIScrollView) {
@@ -169,7 +151,7 @@ extension DetailProductViewController: UIScrollViewDelegate {
 
         let mainOffset = mainScrollView.contentOffset.y
 
-        if csv.scrollView === innerScrollView {
+       if csv.scrollView === innerScrollView {
             if mainOffset < maxHeaderScrollOffset {
                 csv.scrollView.contentOffset = csv.lastContentOffset
             }
@@ -177,16 +159,11 @@ extension DetailProductViewController: UIScrollViewDelegate {
                 csv.scrollView.contentOffset.y = -csv.scrollView.contentInset.top
             }
         } else {
-            if innerScrollView.contentOffset.y > -innerScrollView.contentInset.top
-                || csv.scrollView.contentOffset.y > maxHeaderScrollOffset {
+            if innerScrollView.contentOffset.y > -innerScrollView.contentInset.top || csv.scrollView.contentOffset.y > maxHeaderScrollOffset {
                 mainScrollView.contentOffset.y = maxHeaderScrollOffset
-            } else {
-
             }
-            let contentHeight = innerScrollView.contentSize.height
-                + innerScrollView.contentInset.bottom
-                + innerScrollView.contentInset.top + 32
 
+            let contentHeight = [innerScrollView.contentSize.height, innerScrollView.contentInset.bottom, innerScrollView.contentInset.top].reduce(0, +)
             let mainScrollTopInset: CGFloat
 
             if #available(iOS 11.0, *) {
@@ -198,27 +175,14 @@ extension DetailProductViewController: UIScrollViewDelegate {
             if contentHeight < minimumContentHeight
                 && mainScrollView.lastContentOffset.y < csv.scrollView.contentOffset.y
                 && csv.scrollView.contentOffset.y > mainScrollTopInset {
-
                 mainScrollView.contentOffset = mainScrollView.lastContentOffset
             }
         }
-
         csv.lastContentOffset = csv.contentOffset
     }
 
     func handleMainScrollViewOffsetChange(_ yOffset: CGFloat) {
-        guard nameModel?.subTitle.isSome == true else { return }
-//        navigationTitle?.contentViewOffsetDidChange(yOffset: yOffset, treshold: Constants.navbarAnimationTresholdDefault)
-    }
-
-    func tryToRestoreScrollPosition(for scrollView: UIScrollView) {
-        guard scrollView.contentOffset.y > .zero && mainScrollView.contentOffset.y != maxHeaderScrollOffset else {
-            return
-        }
-
-        UIView.animate(withDuration: Durations.animation, animations: {
-            self.mainScrollView.contentOffset.y = self.maxHeaderScrollOffset
-        })
+        showSettingsIfNeeded(offset: yOffset)
     }
 
 }
@@ -281,24 +245,48 @@ private extension DetailProductViewController {
     }
 
     func setupPages() {
-//        guard let pagesController = mainContent?.viewController else {
-//            return
-//        }
-//
-//        mainContent?.setAnimationBlock(self.animationBlock)
-//        mainContent?.scrollableDelegate = self
-//
-//        self.addChild(pagesController)
-//        pagesContainer.addSubview(pagesController.view)
-//        pagesController.didMove(toParent: self)
-//        pagesController.view.translatesAutoresizingMaskIntoConstraints = false
-//        pagesController.view.fillSuperview()
+        guard let pagesController = mainContent?.viewController else {
+            return
+        }
+
+        mainContent?.setAnimationBlock(self.animationBlock)
+        mainContent?.scrollableDelegate = self
+
+        self.addChild(pagesController)
+        pagesContainer.addSubview(pagesController.view)
+        pagesController.didMove(toParent: self)
+        pagesController.view.translatesAutoresizingMaskIntoConstraints = false
+        pagesController.view.fillSuperview()
     }
 
     func configurePagesHeight() {
         let navBarHeight = self.navigationController?.navigationBar.frame.height ?? 0.0
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         pagesConstraint.constant = UIScreen.main.bounds.height - navBarHeight - statusBarHeight
+    }
+
+    func showSettingsIfNeeded(offset: CGFloat) {
+        guard let customView = navigationItem.rightBarButtonItem?.customView else {
+            return
+        }
+        if offset > Constants.navbarSettingsTreshold && !settingsIsShowed {
+            settingsIsShowed = true
+            customView.layer.removeAllAnimations()
+            UIView.animate(withDuration: Durations.animation,
+                           delay: 0,
+                           options: [.beginFromCurrentState],
+                           animations: {
+                             customView.transform = CGAffineTransform(rotationAngle: 3 * .pi).scaledBy(x: 1, y: 1)
+            }, completion: nil)
+        } else if offset <= Constants.navbarSettingsTreshold && settingsIsShowed {
+            settingsIsShowed = false
+            UIView.animate(withDuration: Durations.animation,
+                           delay: 0,
+                           options: [.beginFromCurrentState],
+                           animations: {
+                            customView.transform = CGAffineTransform(rotationAngle: 2 * .pi).scaledBy(x: 0.01, y: 0.01)
+            }, completion: nil)
+        }
     }
 
 }

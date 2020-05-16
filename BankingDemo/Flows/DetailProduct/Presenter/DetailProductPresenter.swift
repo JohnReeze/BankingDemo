@@ -18,6 +18,7 @@ final class DetailProductPresenter {
 
     weak var view: DetailProductViewInput?
     weak var mainContentInput: ProductMainInfoInput?
+    weak var detailedContentInput: ProductDetailedInfoInput?
     var router: DetailProductRouterInput?
 
     // MARK: - Private Properties
@@ -36,6 +37,12 @@ extension DetailProductPresenter: DetailProductViewOutput {
 
     func viewLoaded() {
         view?.setupInitialState()
+        detailedContentInput?.configure(with: [
+            "TestID1",
+            "TestID2",
+            "TestID3",
+            "TestID4"
+        ], selectedIndex: 0)
     }
 
     func closeAction() {
@@ -66,7 +73,11 @@ extension DetailProductPresenter: ProductMainInfoOutput {
     }
 
     func didChangedBalance(_ isHidden: Bool) {
-        
+
     }
+
+}
+
+extension DetailProductPresenter: ProductDetailedInfoOutput {
 
 }

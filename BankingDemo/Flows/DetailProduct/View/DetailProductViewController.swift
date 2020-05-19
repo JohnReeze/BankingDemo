@@ -7,13 +7,6 @@ import UIKit
 
 final class DetailProductViewController: UIViewController, ModuleTransitionable {
 
-    // MARK: - Nested types
-
-    private enum ScrollDirection: Int {
-        case up
-        case down
-    }
-
     // MARK: - Constants
 
     private enum Constants {
@@ -21,6 +14,7 @@ final class DetailProductViewController: UIViewController, ModuleTransitionable 
         static let titleViewDefaultWidth: CGFloat = 200
         static let titleViewDefaultHeight: CGFloat = 44
         static let navbarSettingsTreshold: CGFloat = 36
+        static let navbarTitleTreshold: CGFloat = 82
     }
 
     // MARK: - IBOutlets
@@ -41,18 +35,20 @@ final class DetailProductViewController: UIViewController, ModuleTransitionable 
 
     private var nameModel: DetailProductNameModel?
     private var refreshControl: UIRefreshControl?
-//    private var navigationTitle: DualNavBarTitleView?
-    private var scrollDirection: ScrollDirection?
+    private lazy var navigationTitle = TitleView(frame: .init(x: 0,
+                                                              y: 0,
+                                                              width:Constants.titleViewDefaultWidth,
+                                                              height: Constants.titleViewDefaultHeight))
 
     private var settingsIsShowed = false
-
+    private var titleIsShowed = false
     private var maxHeaderScrollOffset: CGFloat {
         return headerConstraint.constant
     }
 
     private var minimumContentHeight: CGFloat {
         let navBarHeight = self.navigationController?.navigationBar.frame.height ?? 0.0
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        let statusBarHeight = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
         return UIScreen.main.bounds.height - navBarHeight - statusBarHeight - headerConstraint.constant
     }
 
@@ -62,8 +58,6 @@ final class DetailProductViewController: UIViewController, ModuleTransitionable 
 
     @IBOutlet private weak var headerConstraint: NSLayoutConstraint!
     @IBOutlet private weak var pagesConstraint: NSLayoutConstraint!
-
-//    private let
 
     // MARK: - UIViewController
 
@@ -107,9 +101,7 @@ extension DetailProductViewController: DetailProductViewInput {
     }
 
     func configure(with model: DetailProductNameModel) {
-//        navigationTitle?.configure(with: model.title,
-//                                   subtitle: model.subTitle,
-//                                   animated: true)
+        navigationTitle.configure(title: model.title, subTitle: model.subTitle)
         self.nameModel = model
     }
 
@@ -134,10 +126,8 @@ extension DetailProductViewController: ContentScrollable {
 extension DetailProductViewController: UIScrollViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        scrollDirection = mainScrollView.lastContentOffset.y < scrollView.contentOffset.y ? .up : .down
         headerContent?.setContentOffset(scrollView.contentOffset.y)
         handleScroll(mainScrollView)
-
     }
 
     private func handleScroll(_ scrollView: UIScrollView) {
@@ -183,6 +173,7 @@ extension DetailProductViewController: UIScrollViewDelegate {
 
     func handleMainScrollViewOffsetChange(_ yOffset: CGFloat) {
         showSettingsIfNeeded(offset: yOffset)
+        showTitleIfNeeded(offset: yOffset)
     }
 
 }
@@ -223,8 +214,9 @@ private extension DetailProductViewController {
         settings.frame = CGRect(x: 0.0, y: 0.0, width: 35.0, height: 35.0)
         settings.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settings)
-        // TODO: remove test code and make title view
-        title = "Счет Tinkoff"
+        navigationItem.titleView = navigationTitle
+        navigationTitle.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+        navigationTitle.alpha = 0
     }
 
     func setupHeader() {
@@ -261,7 +253,7 @@ private extension DetailProductViewController {
 
     func configurePagesHeight() {
         let navBarHeight = self.navigationController?.navigationBar.frame.height ?? 0.0
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        let statusBarHeight = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
         pagesConstraint.constant = UIScreen.main.bounds.height - navBarHeight - statusBarHeight
     }
 
@@ -280,10 +272,40 @@ private extension DetailProductViewController {
         if offset > Constants.navbarSettingsTreshold && !settingsIsShowed {
             settingsIsShowed = true
             customView.layer.removeAllAnimations()
-            animation({ customView.transform = CGAffineTransform(rotationAngle: 3 * .pi).scaledBy(x: 1, y: 1)})
+            animation { customView.transform = CGAffineTransform(rotationAngle: 3 * .pi).scaledBy(x: 1, y: 1) }
         } else if offset <= Constants.navbarSettingsTreshold && settingsIsShowed {
             settingsIsShowed = false
-            animation({ customView.transform = CGAffineTransform(rotationAngle: 2 * .pi).scaledBy(x: 0.01, y: 0.01) })
+            animation { customView.transform = CGAffineTransform(rotationAngle: 2 * .pi).scaledBy(x: 0.01, y: 0.01) }
+        }
+    }
+
+    func showTitleIfNeeded(offset: CGFloat) {
+        guard let customView = navigationItem.titleView else {
+            return
+        }
+
+        let animation: Closure<EmptyClosure> = {
+            UIView.animate(withDuration: Durations.animation,
+                           delay: 0,
+                           options: [.beginFromCurrentState],
+                           animations: $0,
+                           completion: nil)
+        }
+
+        if offset > Constants.navbarTitleTreshold && !titleIsShowed {
+            titleIsShowed = true
+            customView.layer.removeAllAnimations()
+            animation {
+                customView.transform = CGAffineTransform(scaleX: 1, y: 1)
+                customView.alpha = 1
+                self.view.layoutIfNeeded()
+            }
+        } else if offset <= Constants.navbarTitleTreshold && titleIsShowed {
+            titleIsShowed = false
+            animation {
+                customView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+                customView.alpha = 0
+            }
         }
     }
 

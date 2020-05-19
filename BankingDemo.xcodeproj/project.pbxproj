@@ -133,6 +133,10 @@
 		0083C6322473EEA300BB11B6 /* HistoryModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C6302473EEA300BB11B6 /* HistoryModelParser.swift */; };
 		0083C6342474254A00BB11B6 /* ExpensesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C6332474254A00BB11B6 /* ExpensesModel.swift */; };
 		0083C6352474254A00BB11B6 /* ExpensesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C6332474254A00BB11B6 /* ExpensesModel.swift */; };
+		0083C63724742D8900BB11B6 /* HistoryExpensesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C63624742D8900BB11B6 /* HistoryExpensesParser.swift */; };
+		0083C63824742D8900BB11B6 /* HistoryExpensesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C63624742D8900BB11B6 /* HistoryExpensesParser.swift */; };
+		0083C63B247435EC00BB11B6 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C63A247435EC00BB11B6 /* TitleView.swift */; };
+		0083C63C247435EC00BB11B6 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C63A247435EC00BB11B6 /* TitleView.swift */; };
 		0094DF8724683C5100CF3874 /* DetailProductModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094DF7724683C5000CF3874 /* DetailProductModuleConfigurator.swift */; };
 		0094DF8824683C5100CF3874 /* DetailProductModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094DF7724683C5000CF3874 /* DetailProductModuleConfigurator.swift */; };
 		0094DF8924683C5100CF3874 /* DetailProductViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094DF7924683C5000CF3874 /* DetailProductViewInput.swift */; };
@@ -294,6 +298,8 @@
 		0083C62D2473EA2C00BB11B6 /* HistorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySection.swift; sourceTree = "<group>"; };
 		0083C6302473EEA300BB11B6 /* HistoryModelParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModelParser.swift; sourceTree = "<group>"; };
 		0083C6332474254A00BB11B6 /* ExpensesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesModel.swift; sourceTree = "<group>"; };
+		0083C63624742D8900BB11B6 /* HistoryExpensesParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExpensesParser.swift; sourceTree = "<group>"; };
+		0083C63A247435EC00BB11B6 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		0094DF7724683C5000CF3874 /* DetailProductModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailProductModuleConfigurator.swift; sourceTree = "<group>"; };
 		0094DF7924683C5000CF3874 /* DetailProductViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailProductViewInput.swift; sourceTree = "<group>"; };
 		0094DF7A24683C5000CF3874 /* DetailProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailProductViewController.xib; sourceTree = "<group>"; };
@@ -477,6 +483,7 @@
 				00334436246EE6A70058F5AD /* ProductHistoryInfoViewModel.swift */,
 				0083C62D2473EA2C00BB11B6 /* HistorySection.swift */,
 				0083C6302473EEA300BB11B6 /* HistoryModelParser.swift */,
+				0083C63624742D8900BB11B6 /* HistoryExpensesParser.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -623,6 +630,14 @@
 			path = LoaderCells;
 			sourceTree = "<group>";
 		};
+		0083C639247435E200BB11B6 /* TitleView */ = {
+			isa = PBXGroup;
+			children = (
+				0083C63A247435EC00BB11B6 /* TitleView.swift */,
+			);
+			path = TitleView;
+			sourceTree = "<group>";
+		};
 		0094DF7624683C5000CF3874 /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
@@ -634,6 +649,7 @@
 		0094DF7824683C5000CF3874 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0083C639247435E200BB11B6 /* TitleView */,
 				0094DF7924683C5000CF3874 /* DetailProductViewInput.swift */,
 				0094DF7A24683C5000CF3874 /* DetailProductViewController.xib */,
 				0094DF7B24683C5000CF3874 /* DetailProductViewController.swift */,
@@ -1414,6 +1430,7 @@
 				0033445A246EFC030058F5AD /* ExpenseType.swift in Sources */,
 				003343FF246ECC980058F5AD /* ProductDetailedInfoInput.swift in Sources */,
 				00772DAA2471C60900F5C311 /* HistoryEntity.swift in Sources */,
+				0083C63824742D8900BB11B6 /* HistoryExpensesParser.swift in Sources */,
 				0094DFE1246850B800CF3874 /* ProductMainInfoViewOutput.swift in Sources */,
 				0083C62F2473EA2C00BB11B6 /* HistorySection.swift in Sources */,
 				00334405246ECC980058F5AD /* ProductDetailedInfoViewController.swift in Sources */,
@@ -1459,6 +1476,7 @@
 				003343FB246ECC980058F5AD /* ProductDetailedInfoOutput.swift in Sources */,
 				00675377246713BA00B035A6 /* FinanceProductType.swift in Sources */,
 				0067536D2467113900B035A6 /* Closure.swift in Sources */,
+				0083C63C247435EC00BB11B6 /* TitleView.swift in Sources */,
 				0094DF8E24683C5100CF3874 /* DetailProductViewController.swift in Sources */,
 				006753712467130900B035A6 /* Array.swift in Sources */,
 				0094DFFB246850B800CF3874 /* ProductMainInfoRouterInput.swift in Sources */,
@@ -1516,6 +1534,7 @@
 				00334459246EFC030058F5AD /* ExpenseType.swift in Sources */,
 				003343FE246ECC980058F5AD /* ProductDetailedInfoInput.swift in Sources */,
 				00772DA92471C60900F5C311 /* HistoryEntity.swift in Sources */,
+				0083C63724742D8900BB11B6 /* HistoryExpensesParser.swift in Sources */,
 				0094DFE0246850B800CF3874 /* ProductMainInfoViewOutput.swift in Sources */,
 				0083C62E2473EA2C00BB11B6 /* HistorySection.swift in Sources */,
 				00334404246ECC980058F5AD /* ProductDetailedInfoViewController.swift in Sources */,
@@ -1561,6 +1580,7 @@
 				003343FA246ECC980058F5AD /* ProductDetailedInfoOutput.swift in Sources */,
 				00675376246713BA00B035A6 /* FinanceProductType.swift in Sources */,
 				0067536C2467113900B035A6 /* Closure.swift in Sources */,
+				0083C63B247435EC00BB11B6 /* TitleView.swift in Sources */,
 				0094DF8D24683C5100CF3874 /* DetailProductViewController.swift in Sources */,
 				006753702467130900B035A6 /* Array.swift in Sources */,
 				0094DFFA246850B800CF3874 /* ProductMainInfoRouterInput.swift in Sources */,

@@ -63,6 +63,7 @@ private extension ProductHistoryInfoPresenter {
             case .success(let entity):
                 let parser = HistoryModelsParser()
                 self?.viewModel.setState(.normal(parser.sortAndParseData(entity)))
+                self?.output?.didUpdate(model: HistoryExpensesParser().calculate(model: entity))
             case .failure:
                 self?.viewModel.setState(.error)
             }

@@ -20,6 +20,13 @@
 public enum Styles {
   public enum Colors {
 
+    public enum Categories {
+      public static let cash = ColorAsset(name: "Colors/Categories/cash")
+      public static let checmistry = ColorAsset(name: "Colors/Categories/checmistry")
+      public static let fastfood = ColorAsset(name: "Colors/Categories/fastfood")
+      public static let other = ColorAsset(name: "Colors/Categories/other")
+      public static let supermarkets = ColorAsset(name: "Colors/Categories/supermarkets")
+    }
     public static let darkGrdientEnd = ColorAsset(name: "Colors/darkGrdientEnd")
     public static let darkGrdientStart = ColorAsset(name: "Colors/darkGrdientStart")
     public static let indicator = ColorAsset(name: "Colors/indicator")

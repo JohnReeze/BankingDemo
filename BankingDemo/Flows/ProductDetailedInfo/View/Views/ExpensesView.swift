@@ -10,15 +10,15 @@ extension ExpenseType {
     var color: UIColor {
         switch self {
         case .cash:
-            return .blue
+            return Styles.Colors.Categories.cash.color
         case .supermarket:
-            return .yellow
+            return Styles.Colors.Categories.supermarkets.color
         case .fastfood:
-            return .purple
+            return Styles.Colors.Categories.fastfood.color
         case .chemistry:
-            return .green
+            return Styles.Colors.Categories.checmistry.color
         case .other:
-            return.systemPink
+            return Styles.Colors.Categories.other.color
         }
     }
 
@@ -47,7 +47,10 @@ final class ExpensesView: DesignableView {
     func configure(title: String, sum: String, expensesInfo: [(type: ExpenseType, part: Double)]) {
         titleLabel.text = title
         sumButton.setTitle(sum, for: .normal)
-        expensesInfo.forEach { expensesConstraints[$0.type]?.constant = CGFloat($0.part) * self.frame.width }
+        expensesInfo.forEach {
+            expensesConstraints[$0.type]?.constant = CGFloat($0.part) * self.frame.width
+        }
+        expensesStackView.arrangedSubviews.forEach { $0.alpha = 1 }
     }
 
     private func setupInitialState() {

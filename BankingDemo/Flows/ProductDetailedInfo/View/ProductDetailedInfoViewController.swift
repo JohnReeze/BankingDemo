@@ -91,7 +91,6 @@ extension ProductDetailedInfoViewController: ProductDetailedInfoViewInput {
         }
     }
 
-
 }
 
 // MARK: - UIScrollViewDelegate

@@ -42,10 +42,7 @@ final class HistoryCell: UITableViewCell {
 
     func configure(with model: HistoryCellModel) {
         self.iconImageView.image = model.placeholder
-        (model.iconUrl ~> URL.init) ~> {
-            print($0.absoluteString)
-            Nuke.loadImage(with: $0, into: iconImageView)
-        }
+        (model.iconUrl ~> URL.init) ~> { Nuke.loadImage(with: $0, into: iconImageView) }
         self.mainTitleLabel.text = model.mainTitle
         self.subTitleLabel.text = model.subTitle
         self.sumLabel.text = model.sumString

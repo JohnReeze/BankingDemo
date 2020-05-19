@@ -5,7 +5,7 @@
 
 import UIKit
 
-private extension OperationsPayload {
+extension OperationsPayload {
 
     enum TranfserType: String {
         case debit = "Debit"

@@ -43,6 +43,8 @@ extension DetailProductPresenter: DetailProductViewOutput {
             "TestID3",
             "TestID4"
         ], selectedIndex: 0)
+
+        view?.configure(with: .init(title: "Счет Tinkoff Black", subTitle: "128 204,19 ₽"))
     }
 
     func closeAction() {

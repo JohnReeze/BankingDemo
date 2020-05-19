@@ -63,6 +63,16 @@
 		00334457246EF7AB0058F5AD /* ExpensesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00334455246EF7AB0058F5AD /* ExpensesView.xib */; };
 		00334459246EFC030058F5AD /* ExpenseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00334458246EFC030058F5AD /* ExpenseType.swift */; };
 		0033445A246EFC030058F5AD /* ExpenseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00334458246EFC030058F5AD /* ExpenseType.swift */; };
+		004CA1B32472C7C7005AE9F1 /* HistoryLoaderHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CA1B22472C7C7005AE9F1 /* HistoryLoaderHeader.swift */; };
+		004CA1B42472C7C7005AE9F1 /* HistoryLoaderHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CA1B22472C7C7005AE9F1 /* HistoryLoaderHeader.swift */; };
+		004CA1B72472CA57005AE9F1 /* HistoryLoaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CA1B52472CA57005AE9F1 /* HistoryLoaderCell.swift */; };
+		004CA1B82472CA57005AE9F1 /* HistoryLoaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CA1B52472CA57005AE9F1 /* HistoryLoaderCell.swift */; };
+		004CA1B92472CA57005AE9F1 /* HistoryLoaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004CA1B62472CA57005AE9F1 /* HistoryLoaderCell.xib */; };
+		004CA1BA2472CA57005AE9F1 /* HistoryLoaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004CA1B62472CA57005AE9F1 /* HistoryLoaderCell.xib */; };
+		004CA1BD2472CEB0005AE9F1 /* LoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CA1BC2472CEB0005AE9F1 /* LoadableView.swift */; };
+		004CA1BE2472CEB0005AE9F1 /* LoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CA1BC2472CEB0005AE9F1 /* LoadableView.swift */; };
+		004CA1C12472D4D5005AE9F1 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CA1C02472D4D5005AE9F1 /* UITableView.swift */; };
+		004CA1C22472D4D5005AE9F1 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CA1C02472D4D5005AE9F1 /* UITableView.swift */; };
 		0067536224670CD200B035A6 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067536124670CD200B035A6 /* Weak.swift */; };
 		0067536324670CD200B035A6 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067536124670CD200B035A6 /* Weak.swift */; };
 		0067536524670D9E00B035A6 /* SoftUnwrapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067536424670D9E00B035A6 /* SoftUnwrapp.swift */; };
@@ -103,6 +113,26 @@
 		006E7D26246DF3E100458B75 /* CenteredImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7D24246DF3E100458B75 /* CenteredImageButton.swift */; };
 		006E7D28246DF42A00458B75 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7D27246DF42A00458B75 /* String.swift */; };
 		006E7D29246DF42A00458B75 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7D27246DF42A00458B75 /* String.swift */; };
+		00772DA92471C60900F5C311 /* HistoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00772DA82471C60900F5C311 /* HistoryEntity.swift */; };
+		00772DAA2471C60900F5C311 /* HistoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00772DA82471C60900F5C311 /* HistoryEntity.swift */; };
+		00772DAD2471C77100F5C311 /* HistoryMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 00772DAC2471C77100F5C311 /* HistoryMock.json */; };
+		00772DAE2471C77100F5C311 /* HistoryMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 00772DAC2471C77100F5C311 /* HistoryMock.json */; };
+		00772DB02471C7AA00F5C311 /* HistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00772DAF2471C7AA00F5C311 /* HistoryService.swift */; };
+		00772DB12471C7AA00F5C311 /* HistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00772DAF2471C7AA00F5C311 /* HistoryService.swift */; };
+		00772DB32471C7E700F5C311 /* HistoryMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00772DB22471C7E700F5C311 /* HistoryMockService.swift */; };
+		00772DB42471C7E700F5C311 /* HistoryMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00772DB22471C7E700F5C311 /* HistoryMockService.swift */; };
+		00772DB72471E05F00F5C311 /* HistoryHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00772DB62471E05F00F5C311 /* HistoryHeaderCell.swift */; };
+		00772DB82471E05F00F5C311 /* HistoryHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00772DB62471E05F00F5C311 /* HistoryHeaderCell.swift */; };
+		00772DBE2471E30F00F5C311 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00772DBC2471E30F00F5C311 /* HistoryCell.swift */; };
+		00772DBF2471E30F00F5C311 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00772DBC2471E30F00F5C311 /* HistoryCell.swift */; };
+		00772DC02471E30F00F5C311 /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00772DBD2471E30F00F5C311 /* HistoryCell.xib */; };
+		00772DC12471E30F00F5C311 /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00772DBD2471E30F00F5C311 /* HistoryCell.xib */; };
+		0083C62E2473EA2C00BB11B6 /* HistorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C62D2473EA2C00BB11B6 /* HistorySection.swift */; };
+		0083C62F2473EA2C00BB11B6 /* HistorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C62D2473EA2C00BB11B6 /* HistorySection.swift */; };
+		0083C6312473EEA300BB11B6 /* HistoryModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C6302473EEA300BB11B6 /* HistoryModelParser.swift */; };
+		0083C6322473EEA300BB11B6 /* HistoryModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C6302473EEA300BB11B6 /* HistoryModelParser.swift */; };
+		0083C6342474254A00BB11B6 /* ExpensesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C6332474254A00BB11B6 /* ExpensesModel.swift */; };
+		0083C6352474254A00BB11B6 /* ExpensesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C6332474254A00BB11B6 /* ExpensesModel.swift */; };
 		0094DF8724683C5100CF3874 /* DetailProductModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094DF7724683C5000CF3874 /* DetailProductModuleConfigurator.swift */; };
 		0094DF8824683C5100CF3874 /* DetailProductModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094DF7724683C5000CF3874 /* DetailProductModuleConfigurator.swift */; };
 		0094DF8924683C5100CF3874 /* DetailProductViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094DF7924683C5000CF3874 /* DetailProductViewInput.swift */; };
@@ -229,6 +259,11 @@
 		00334452246EF7770058F5AD /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 		00334455246EF7AB0058F5AD /* ExpensesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpensesView.xib; sourceTree = "<group>"; };
 		00334458246EFC030058F5AD /* ExpenseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseType.swift; sourceTree = "<group>"; };
+		004CA1B22472C7C7005AE9F1 /* HistoryLoaderHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryLoaderHeader.swift; sourceTree = "<group>"; };
+		004CA1B52472CA57005AE9F1 /* HistoryLoaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryLoaderCell.swift; sourceTree = "<group>"; };
+		004CA1B62472CA57005AE9F1 /* HistoryLoaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryLoaderCell.xib; sourceTree = "<group>"; };
+		004CA1BC2472CEB0005AE9F1 /* LoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableView.swift; sourceTree = "<group>"; };
+		004CA1C02472D4D5005AE9F1 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		0067536124670CD200B035A6 /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 		0067536424670D9E00B035A6 /* SoftUnwrapp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftUnwrapp.swift; sourceTree = "<group>"; };
 		0067536824670EA300B035A6 /* CollaborativeScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollaborativeScrollView.swift; sourceTree = "<group>"; };
@@ -249,6 +284,16 @@
 		006E7D20246DD9D000458B75 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		006E7D24246DF3E100458B75 /* CenteredImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteredImageButton.swift; sourceTree = "<group>"; };
 		006E7D27246DF42A00458B75 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		00772DA82471C60900F5C311 /* HistoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntity.swift; sourceTree = "<group>"; };
+		00772DAC2471C77100F5C311 /* HistoryMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HistoryMock.json; sourceTree = "<group>"; };
+		00772DAF2471C7AA00F5C311 /* HistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryService.swift; sourceTree = "<group>"; };
+		00772DB22471C7E700F5C311 /* HistoryMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryMockService.swift; sourceTree = "<group>"; };
+		00772DB62471E05F00F5C311 /* HistoryHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryHeaderCell.swift; sourceTree = "<group>"; };
+		00772DBC2471E30F00F5C311 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		00772DBD2471E30F00F5C311 /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
+		0083C62D2473EA2C00BB11B6 /* HistorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySection.swift; sourceTree = "<group>"; };
+		0083C6302473EEA300BB11B6 /* HistoryModelParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModelParser.swift; sourceTree = "<group>"; };
+		0083C6332474254A00BB11B6 /* ExpensesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesModel.swift; sourceTree = "<group>"; };
 		0094DF7724683C5000CF3874 /* DetailProductModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailProductModuleConfigurator.swift; sourceTree = "<group>"; };
 		0094DF7924683C5000CF3874 /* DetailProductViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailProductViewInput.swift; sourceTree = "<group>"; };
 		0094DF7A24683C5000CF3874 /* DetailProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailProductViewController.xib; sourceTree = "<group>"; };
@@ -289,9 +334,7 @@
 		2A33B09CF91B88334D3FA488 /* LaunchingApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchingApplicationService.swift; sourceTree = "<group>"; };
 		2A5B25B393A287CA02A928DF /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		368A3626C8358033245C7EE0 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		4075DE8F0DACA58F31CBB512 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		5235E24963C3BADFABC503C3 /* Pods-BankingDemoRelease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankingDemoRelease.release.xcconfig"; path = "Target Support Files/Pods-BankingDemoRelease/Pods-BankingDemoRelease.release.xcconfig"; sourceTree = "<group>"; };
-		5647CCDDD6CC6449C20071C9 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		6B67636634920293EB33ABC7 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		790F0003A546D2BBAC19F12D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9002A36666940978E7FF819D /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
@@ -307,7 +350,6 @@
 		D069D1276791746CC464E1FD /* Pods-BankingDemoRelease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankingDemoRelease.debug.xcconfig"; path = "Target Support Files/Pods-BankingDemoRelease/Pods-BankingDemoRelease.debug.xcconfig"; sourceTree = "<group>"; };
 		D76FA27385F668B01970F866 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E99F72CD9CAECCDD3402993E /* BankingDemoRelease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankingDemoRelease.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8F963360B452295A71CF5C7 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,6 +396,7 @@
 				003343E8246ECC980058F5AD /* ProductDetailedInfoOutput.swift */,
 				003343E9246ECC980058F5AD /* ProductDetailedInfoPresenter.swift */,
 				003343EA246ECC980058F5AD /* ProductDetailedInfoInput.swift */,
+				0083C6332474254A00BB11B6 /* ExpensesModel.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -418,6 +461,7 @@
 		00334434246EE6A70058F5AD /* ProductHistoryInfo */ = {
 			isa = PBXGroup;
 			children = (
+				00772D0E247055EB00F5C311 /* View */,
 				00334435246EE6A70058F5AD /* ViewModel */,
 				00334437246EE6A70058F5AD /* Presenter */,
 				0033443B246EE6A70058F5AD /* Models */,
@@ -431,6 +475,8 @@
 			isa = PBXGroup;
 			children = (
 				00334436246EE6A70058F5AD /* ProductHistoryInfoViewModel.swift */,
+				0083C62D2473EA2C00BB11B6 /* HistorySection.swift */,
+				0083C6302473EEA300BB11B6 /* HistoryModelParser.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -538,6 +584,43 @@
 				006E7D24246DF3E100458B75 /* CenteredImageButton.swift */,
 			);
 			path = CenteredImageButton;
+			sourceTree = "<group>";
+		};
+		00772D0E247055EB00F5C311 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00772DB52471E04400F5C311 /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00772DAB2471C75700F5C311 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				00772DAC2471C77100F5C311 /* HistoryMock.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		00772DB52471E04400F5C311 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				00772DC22472BC5F00F5C311 /* LoaderCells */,
+				00772DB62471E05F00F5C311 /* HistoryHeaderCell.swift */,
+				00772DBC2471E30F00F5C311 /* HistoryCell.swift */,
+				00772DBD2471E30F00F5C311 /* HistoryCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		00772DC22472BC5F00F5C311 /* LoaderCells */ = {
+			isa = PBXGroup;
+			children = (
+				004CA1B22472C7C7005AE9F1 /* HistoryLoaderHeader.swift */,
+				004CA1B52472CA57005AE9F1 /* HistoryLoaderCell.swift */,
+				004CA1B62472CA57005AE9F1 /* HistoryLoaderCell.xib */,
+			);
+			path = LoaderCells;
 			sourceTree = "<group>";
 		};
 		0094DF7624683C5000CF3874 /* Configurator */ = {
@@ -727,6 +810,7 @@
 		182B7C8302A399F0517810B6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				00772DAB2471C75700F5C311 /* Mocks */,
 				D187493E31B88FB23A2045E1 /* Constants */,
 				61F91E8C169BAAD1404C24DA /* Fonts */,
 				BC9E8A54904B1C7BE2BAC2F2 /* Images */,
@@ -745,6 +829,7 @@
 				006E7D20246DD9D000458B75 /* UIButton.swift */,
 				003343E3246EC6620058F5AD /* UINavigationController.swift */,
 				00334414246ED0540058F5AD /* UIScrollView.swift */,
+				004CA1C02472D4D5005AE9F1 /* UITableView.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -814,17 +899,10 @@
 			path = UnitTests;
 			sourceTree = "<group>";
 		};
-		33F53F0C74EFF54542CEA0A4 /* Entry */ = {
-			isa = PBXGroup;
-			children = (
-				F8F963360B452295A71CF5C7 /* .gitkeep */,
-			);
-			path = Entry;
-			sourceTree = "<group>";
-		};
 		3EA3DA2A4DE6040ADAD06B6C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				004CA1BC2472CEB0005AE9F1 /* LoadableView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -851,7 +929,6 @@
 			isa = PBXGroup;
 			children = (
 				F6E9B662611FD9D69420DB51 /* Entity */,
-				33F53F0C74EFF54542CEA0A4 /* Entry */,
 				00675375246713BA00B035A6 /* FinanceProductType.swift */,
 				006E7D0F246C098400458B75 /* CardType.swift */,
 				00334458246EFC030058F5AD /* ExpenseType.swift */,
@@ -938,7 +1015,8 @@
 		BF9DDE047636BFD23181076C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				5647CCDDD6CC6449C20071C9 /* .gitkeep */,
+				00772DAF2471C7AA00F5C311 /* HistoryService.swift */,
+				00772DB22471C7E700F5C311 /* HistoryMockService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1005,7 +1083,7 @@
 		F6E9B662611FD9D69420DB51 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				4075DE8F0DACA58F31CBB512 /* .gitkeep */,
+				00772DA82471C60900F5C311 /* HistoryEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1117,16 +1195,19 @@
 			files = (
 				3FE5CC1BBBC3B9E2A0142FF2 /* Assets.xcassets in Resources */,
 				0094DFF0246850B800CF3874 /* CardProductHeaderCell.xib in Resources */,
+				00772DC02471E30F00F5C311 /* HistoryCell.xib in Resources */,
 				00334402246ECC980058F5AD /* ProductDetailedInfoViewController.xib in Resources */,
 				0094DFE8246850B800CF3874 /* ProductsCarouselView.xib in Resources */,
 				0094DFEE246850B800CF3874 /* PlainProductCell.xib in Resources */,
 				0033442F246ED5BB0058F5AD /* ContentCollaborativeViewController.xib in Resources */,
 				CBB0A18BE798D916666AA163 /* LaunchScreen.xib in Resources */,
+				00772DAD2471C77100F5C311 /* HistoryMock.json in Resources */,
 				E2B7EBBD6022268CB1829E90 /* Localizable.strings in Resources */,
 				006E7D1E246DCEE700458B75 /* tinkoffLike.otf in Resources */,
 				00334456246EF7AB0058F5AD /* ExpensesView.xib in Resources */,
 				006E7D0D246B07F000458B75 /* CardView.xib in Resources */,
 				0094DF8B24683C5100CF3874 /* DetailProductViewController.xib in Resources */,
+				004CA1B92472CA57005AE9F1 /* HistoryLoaderCell.xib in Resources */,
 				0094DFDE246850B800CF3874 /* ProductMainInfoViewController.xib in Resources */,
 				0094DFE4246850B800CF3874 /* ProductOptionView.xib in Resources */,
 			);
@@ -1138,16 +1219,19 @@
 			files = (
 				FA76F8FF42586727EDCA3CBC /* Assets.xcassets in Resources */,
 				0094DFF1246850B800CF3874 /* CardProductHeaderCell.xib in Resources */,
+				00772DC12471E30F00F5C311 /* HistoryCell.xib in Resources */,
 				00334403246ECC980058F5AD /* ProductDetailedInfoViewController.xib in Resources */,
 				0094DFE9246850B800CF3874 /* ProductsCarouselView.xib in Resources */,
 				0094DFEF246850B800CF3874 /* PlainProductCell.xib in Resources */,
 				00334430246ED5BB0058F5AD /* ContentCollaborativeViewController.xib in Resources */,
 				80C7A39DCED8935D8132D2BF /* LaunchScreen.xib in Resources */,
+				00772DAE2471C77100F5C311 /* HistoryMock.json in Resources */,
 				24A1D0D137923CDBA634000E /* Localizable.strings in Resources */,
 				006E7D1F246DCEE700458B75 /* tinkoffLike.otf in Resources */,
 				00334457246EF7AB0058F5AD /* ExpensesView.xib in Resources */,
 				006E7D0E246B07F000458B75 /* CardView.xib in Resources */,
 				0094DF8C24683C5100CF3874 /* DetailProductViewController.xib in Resources */,
+				004CA1BA2472CA57005AE9F1 /* HistoryLoaderCell.xib in Resources */,
 				0094DFDF246850B800CF3874 /* ProductMainInfoViewController.xib in Resources */,
 				0094DFE5246850B800CF3874 /* ProductOptionView.xib in Resources */,
 			);
@@ -1319,6 +1403,7 @@
 				006E7D01246B02EE00458B75 /* UIImage.swift in Sources */,
 				C90BE908A8C077249DCFA5C9 /* AppDelegate.swift in Sources */,
 				00334409246ECC980058F5AD /* ProductDetailedInfoViewInput.swift in Sources */,
+				004CA1B82472CA57005AE9F1 /* HistoryLoaderCell.swift in Sources */,
 				0094DFDD246850B800CF3874 /* ProductMainInfoViewController.swift in Sources */,
 				0094DFEB246850B800CF3874 /* ProductsCarouselView.swift in Sources */,
 				006E7D11246C098400458B75 /* CardType.swift in Sources */,
@@ -1328,11 +1413,16 @@
 				0094DFF7246850B800CF3874 /* ProductMainInfoConfigurator.swift in Sources */,
 				0033445A246EFC030058F5AD /* ExpenseType.swift in Sources */,
 				003343FF246ECC980058F5AD /* ProductDetailedInfoInput.swift in Sources */,
+				00772DAA2471C60900F5C311 /* HistoryEntity.swift in Sources */,
 				0094DFE1246850B800CF3874 /* ProductMainInfoViewOutput.swift in Sources */,
+				0083C62F2473EA2C00BB11B6 /* HistorySection.swift in Sources */,
 				00334405246ECC980058F5AD /* ProductDetailedInfoViewController.swift in Sources */,
+				00772DB12471C7AA00F5C311 /* HistoryService.swift in Sources */,
 				006E7D07246B042F00458B75 /* Fonts.swift in Sources */,
 				00334447246EE6A80058F5AD /* ProductHistoryInfoOutput.swift in Sources */,
 				0094DFF9246850B800CF3874 /* ProductMainInfoRouter.swift in Sources */,
+				0083C6352474254A00BB11B6 /* ExpensesModel.swift in Sources */,
+				004CA1B42472C7C7005AE9F1 /* HistoryLoaderHeader.swift in Sources */,
 				0094DFA224683EF800CF3874 /* Durations.swift in Sources */,
 				0094DF9A24683C5100CF3874 /* DetailProductRouterInput.swift in Sources */,
 				0094DF8A24683C5100CF3874 /* DetailProductViewInput.swift in Sources */,
@@ -1349,6 +1439,7 @@
 				00334413246ECC980058F5AD /* ProductDetailedInfoRouterInput.swift in Sources */,
 				0094DFDB246850B800CF3874 /* ProductMainInfoViewInput.swift in Sources */,
 				0094DF8824683C5100CF3874 /* DetailProductModuleConfigurator.swift in Sources */,
+				0083C6322473EEA300BB11B6 /* HistoryModelParser.swift in Sources */,
 				0094DFF3246850B800CF3874 /* CardProductHeaderCell.swift in Sources */,
 				00334443246EE6A70058F5AD /* ProductHistoryInfoViewModel.swift in Sources */,
 				003343FD246ECC980058F5AD /* ProductDetailedInfoPresenter.swift in Sources */,
@@ -1358,9 +1449,11 @@
 				006E7CFE246B021400458B75 /* Images.swift in Sources */,
 				0067536A24670EA800B035A6 /* CollaborativeScrollView.swift in Sources */,
 				00334411246ECC980058F5AD /* ProductDetailedInfoRouter.swift in Sources */,
+				00772DBF2471E30F00F5C311 /* HistoryCell.swift in Sources */,
 				F2D444ECD62A8102FA96A080 /* LaunchingApplicationService.swift in Sources */,
 				001A357124686728006DECCE /* UIView.swift in Sources */,
 				0094DFD3246850B800CF3874 /* ProductHeaderType.swift in Sources */,
+				004CA1C22472D4D5005AE9F1 /* UITableView.swift in Sources */,
 				0067537B246719CF00B035A6 /* DesignableView.swift in Sources */,
 				001A356D246858A5006DECCE /* UICollectionView.swift in Sources */,
 				003343FB246ECC980058F5AD /* ProductDetailedInfoOutput.swift in Sources */,
@@ -1372,6 +1465,8 @@
 				00334449246EE6A80058F5AD /* ProductHistoryInfoInput.swift in Sources */,
 				006E7D26246DF3E100458B75 /* CenteredImageButton.swift in Sources */,
 				0094DFE3246850B800CF3874 /* ProductOptionsView.swift in Sources */,
+				004CA1BE2472CEB0005AE9F1 /* LoadableView.swift in Sources */,
+				00772DB42471C7E700F5C311 /* HistoryMockService.swift in Sources */,
 				0094DF9F24683CB800CF3874 /* ModuleTransitionable.swift in Sources */,
 				0094DF9824683C5100CF3874 /* DetailProductRouter.swift in Sources */,
 				0094DFD7246850B800CF3874 /* ProductOptionsViewModel.swift in Sources */,
@@ -1381,6 +1476,7 @@
 				003343E5246EC6620058F5AD /* UINavigationController.swift in Sources */,
 				0094DFCD246850B800CF3874 /* ProductMainInfoPresenter.swift in Sources */,
 				5D4A7B297D28C93B76357970 /* Strings.swift in Sources */,
+				00772DB82471E05F00F5C311 /* HistoryHeaderCell.swift in Sources */,
 				0033440F246ECC980058F5AD /* ProductDetailedInfoModuleConfigurator.swift in Sources */,
 				B0D86F6FD09421EA4FDB3C64 /* UIApplication.swift in Sources */,
 				00334454246EF7770058F5AD /* ExpensesView.swift in Sources */,
@@ -1409,6 +1505,7 @@
 				006E7D00246B02EE00458B75 /* UIImage.swift in Sources */,
 				54F83C5F9656175DE70C32E0 /* AppDelegate.swift in Sources */,
 				00334408246ECC980058F5AD /* ProductDetailedInfoViewInput.swift in Sources */,
+				004CA1B72472CA57005AE9F1 /* HistoryLoaderCell.swift in Sources */,
 				0094DFDC246850B800CF3874 /* ProductMainInfoViewController.swift in Sources */,
 				0094DFEA246850B800CF3874 /* ProductsCarouselView.swift in Sources */,
 				006E7D10246C098400458B75 /* CardType.swift in Sources */,
@@ -1418,11 +1515,16 @@
 				0094DFF6246850B800CF3874 /* ProductMainInfoConfigurator.swift in Sources */,
 				00334459246EFC030058F5AD /* ExpenseType.swift in Sources */,
 				003343FE246ECC980058F5AD /* ProductDetailedInfoInput.swift in Sources */,
+				00772DA92471C60900F5C311 /* HistoryEntity.swift in Sources */,
 				0094DFE0246850B800CF3874 /* ProductMainInfoViewOutput.swift in Sources */,
+				0083C62E2473EA2C00BB11B6 /* HistorySection.swift in Sources */,
 				00334404246ECC980058F5AD /* ProductDetailedInfoViewController.swift in Sources */,
+				00772DB02471C7AA00F5C311 /* HistoryService.swift in Sources */,
 				006E7D06246B042F00458B75 /* Fonts.swift in Sources */,
 				00334446246EE6A80058F5AD /* ProductHistoryInfoOutput.swift in Sources */,
 				0094DFF8246850B800CF3874 /* ProductMainInfoRouter.swift in Sources */,
+				0083C6342474254A00BB11B6 /* ExpensesModel.swift in Sources */,
+				004CA1B32472C7C7005AE9F1 /* HistoryLoaderHeader.swift in Sources */,
 				0094DFA124683EF800CF3874 /* Durations.swift in Sources */,
 				0094DF9924683C5100CF3874 /* DetailProductRouterInput.swift in Sources */,
 				0094DF8924683C5100CF3874 /* DetailProductViewInput.swift in Sources */,
@@ -1439,6 +1541,7 @@
 				00334412246ECC980058F5AD /* ProductDetailedInfoRouterInput.swift in Sources */,
 				0094DFDA246850B800CF3874 /* ProductMainInfoViewInput.swift in Sources */,
 				0094DF8724683C5100CF3874 /* DetailProductModuleConfigurator.swift in Sources */,
+				0083C6312473EEA300BB11B6 /* HistoryModelParser.swift in Sources */,
 				0094DFF2246850B800CF3874 /* CardProductHeaderCell.swift in Sources */,
 				00334442246EE6A70058F5AD /* ProductHistoryInfoViewModel.swift in Sources */,
 				003343FC246ECC980058F5AD /* ProductDetailedInfoPresenter.swift in Sources */,
@@ -1448,9 +1551,11 @@
 				006E7CFD246B021400458B75 /* Images.swift in Sources */,
 				0067536924670EA800B035A6 /* CollaborativeScrollView.swift in Sources */,
 				00334410246ECC980058F5AD /* ProductDetailedInfoRouter.swift in Sources */,
+				00772DBE2471E30F00F5C311 /* HistoryCell.swift in Sources */,
 				BB486EC07E964E47D8FA4817 /* LaunchingApplicationService.swift in Sources */,
 				001A357024686728006DECCE /* UIView.swift in Sources */,
 				0094DFD2246850B800CF3874 /* ProductHeaderType.swift in Sources */,
+				004CA1C12472D4D5005AE9F1 /* UITableView.swift in Sources */,
 				0067537A246719CF00B035A6 /* DesignableView.swift in Sources */,
 				001A356C246858A5006DECCE /* UICollectionView.swift in Sources */,
 				003343FA246ECC980058F5AD /* ProductDetailedInfoOutput.swift in Sources */,
@@ -1462,6 +1567,8 @@
 				00334448246EE6A80058F5AD /* ProductHistoryInfoInput.swift in Sources */,
 				006E7D25246DF3E100458B75 /* CenteredImageButton.swift in Sources */,
 				0094DFE2246850B800CF3874 /* ProductOptionsView.swift in Sources */,
+				004CA1BD2472CEB0005AE9F1 /* LoadableView.swift in Sources */,
+				00772DB32471C7E700F5C311 /* HistoryMockService.swift in Sources */,
 				0094DF9E24683CB800CF3874 /* ModuleTransitionable.swift in Sources */,
 				0094DF9724683C5100CF3874 /* DetailProductRouter.swift in Sources */,
 				0094DFD6246850B800CF3874 /* ProductOptionsViewModel.swift in Sources */,
@@ -1471,6 +1578,7 @@
 				003343E4246EC6620058F5AD /* UINavigationController.swift in Sources */,
 				0094DFCC246850B800CF3874 /* ProductMainInfoPresenter.swift in Sources */,
 				15E296EC10446AA26E4FF535 /* Strings.swift in Sources */,
+				00772DB72471E05F00F5C311 /* HistoryHeaderCell.swift in Sources */,
 				0033440E246ECC980058F5AD /* ProductDetailedInfoModuleConfigurator.swift in Sources */,
 				087BD819C3B10C1A40483D45 /* UIApplication.swift in Sources */,
 				00334453246EF7770058F5AD /* ExpensesView.swift in Sources */,

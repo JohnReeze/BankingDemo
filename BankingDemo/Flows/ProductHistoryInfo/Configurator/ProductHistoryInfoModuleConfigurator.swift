@@ -11,7 +11,7 @@ final class ProductHistoryInfoModuleConfigurator {
 
     func configure(output: ProductHistoryInfoOutput, rootRouter: ModuleTransitionable) -> (ContentCollaborative, ProductHistoryInfoInput) {
         let view = ContentCollaborativeViewController()
-        let presenter = ProductHistoryInfoPresenter()
+        let presenter = ProductHistoryInfoPresenter(service: HistoryMockService())
         let router = ProductHistoryInfoRouter()
 
         router.view = rootRouter

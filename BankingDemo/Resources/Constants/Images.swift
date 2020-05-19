@@ -25,6 +25,7 @@ public enum Styles {
     public static let indicator = ColorAsset(name: "Colors/indicator")
     public static let main = ColorAsset(name: "Colors/main")
     public static let mainBlue = ColorAsset(name: "Colors/mainBlue")
+    public static let placeholderColor = ColorAsset(name: "Colors/placeholderColor")
   }
   public enum Images {
 

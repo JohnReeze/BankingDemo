@@ -54,10 +54,12 @@ final class ExpensesView: DesignableView {
         view.backgroundColor = Styles.Colors.main.color
         stackViewContainer.layer.cornerRadius = stackViewContainer.frame.height / 2
         stackViewContainer.clipsToBounds = true
+        stackViewContainer.backgroundColor = Styles.Colors.placeholderColor.color
 
         ExpenseType.allCases.forEach {
             let view = UIView()
             view.backgroundColor = $0.color
+            view.alpha = 0
             expensesStackView.addArrangedSubview(view)
             let widthConstraint = view.widthAnchor.constraint(equalToConstant: 0)
             widthConstraint.priority = .defaultHigh

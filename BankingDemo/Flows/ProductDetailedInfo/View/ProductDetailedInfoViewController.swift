@@ -83,15 +83,14 @@ extension ProductDetailedInfoViewController: ProductDetailedInfoViewInput {
         contentBlurView.alpha = CGFloat(alpha)
     }
 
-    func configure(models: [(type: ExpenseType, part: Double)]) {
-        let models: [(type: ExpenseType, part: Double)] = [
-            (type: .cash, part: 0.3),
-            (type: .supermarket, part: 0.6),
-            (type: .fastfood, part: 0.1)
-        ]
-        expensesView.configure(title: "Траты за май", sum: "123 32,34 $",
-                               expensesInfo: models)
+    func configure(model: ExpensesModel) {
+        animationBlock? {
+            self.expensesView.configure(title: model.month,
+                                        sum: model.sumString,
+                                        expensesInfo: model.spendings)
+        }
     }
+
 
 }
 

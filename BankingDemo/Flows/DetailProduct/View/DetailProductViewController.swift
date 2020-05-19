@@ -93,7 +93,6 @@ final class DetailProductViewController: UIViewController, ModuleTransitionable 
         guard keyPath == Constants.positionKeyPath else {
             return
         }
-        print(mainScrollView.contentOffset.y)
         handleMainScrollViewOffsetChange(mainScrollView.contentOffset.y)
     }
 
@@ -138,6 +137,7 @@ extension DetailProductViewController: UIScrollViewDelegate {
         scrollDirection = mainScrollView.lastContentOffset.y < scrollView.contentOffset.y ? .up : .down
         headerContent?.setContentOffset(scrollView.contentOffset.y)
         handleScroll(mainScrollView)
+
     }
 
     private func handleScroll(_ scrollView: UIScrollView) {
@@ -151,7 +151,7 @@ extension DetailProductViewController: UIScrollViewDelegate {
 
         let mainOffset = mainScrollView.contentOffset.y
 
-       if csv.scrollView === innerScrollView {
+        if csv.scrollView === innerScrollView {
             if mainOffset < maxHeaderScrollOffset {
                 csv.scrollView.contentOffset = csv.lastContentOffset
             }
@@ -269,23 +269,21 @@ private extension DetailProductViewController {
         guard let customView = navigationItem.rightBarButtonItem?.customView else {
             return
         }
+
+        let animation: Closure<EmptyClosure> = {
+            UIView.animate(withDuration: Durations.animation,
+                           delay: 0,
+                           options: [.beginFromCurrentState],
+                           animations: $0,
+                           completion: nil)
+        }
         if offset > Constants.navbarSettingsTreshold && !settingsIsShowed {
             settingsIsShowed = true
             customView.layer.removeAllAnimations()
-            UIView.animate(withDuration: Durations.animation,
-                           delay: 0,
-                           options: [.beginFromCurrentState],
-                           animations: {
-                             customView.transform = CGAffineTransform(rotationAngle: 3 * .pi).scaledBy(x: 1, y: 1)
-            }, completion: nil)
+            animation({ customView.transform = CGAffineTransform(rotationAngle: 3 * .pi).scaledBy(x: 1, y: 1)})
         } else if offset <= Constants.navbarSettingsTreshold && settingsIsShowed {
             settingsIsShowed = false
-            UIView.animate(withDuration: Durations.animation,
-                           delay: 0,
-                           options: [.beginFromCurrentState],
-                           animations: {
-                            customView.transform = CGAffineTransform(rotationAngle: 2 * .pi).scaledBy(x: 0.01, y: 0.01)
-            }, completion: nil)
+            animation({ customView.transform = CGAffineTransform(rotationAngle: 2 * .pi).scaledBy(x: 0.01, y: 0.01) })
         }
     }
 

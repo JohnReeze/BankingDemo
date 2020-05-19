@@ -24,6 +24,13 @@ public enum L10n {
     /// Реквизиты
     public static let requisites = L10n.tr("Localizable", "Actions.requisites")
   }
+
+  public enum Date {
+    /// Сегодня
+    public static let today = L10n.tr("Localizable", "Date.today")
+    /// Вчера
+    public static let yestarday = L10n.tr("Localizable", "Date.yestarday")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

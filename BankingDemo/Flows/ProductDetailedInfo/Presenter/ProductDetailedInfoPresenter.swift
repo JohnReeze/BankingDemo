@@ -82,8 +82,8 @@ private extension ProductDetailedInfoPresenter {
 
 extension ProductDetailedInfoPresenter: ProductHistoryInfoOutput {
 
-    func didUpdate(models: [(type: ExpenseType, part: Double)]) {
-        view?.configure(models: models)
+    func didUpdate(model: ExpensesModel) {
+        view?.configure(model: model)
     }
-    
+
 }

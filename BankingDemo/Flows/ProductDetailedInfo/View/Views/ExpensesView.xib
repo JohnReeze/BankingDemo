@@ -21,8 +21,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0W-iR-zjk">
-                    <rect key="frame" x="399" y="8" width="106" height="18"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                    <rect key="frame" x="390" y="6.5" width="115" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                     <inset key="titleEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="44 343,34 $" image="arrowDown"/>
                 </button>
@@ -33,12 +33,12 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4CD-cv-jYZ">
-                    <rect key="frame" x="12" y="45.5" width="493" height="10"/>
+                    <rect key="frame" x="16" y="45.5" width="485" height="12"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PjR-EX-CoH">
-                            <rect key="frame" x="0.0" y="0.0" width="493" height="10"/>
+                            <rect key="frame" x="0.0" y="0.0" width="485" height="12"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="10" id="6rL-Qa-f65"/>
+                                <constraint firstAttribute="height" constant="12" id="6rL-Qa-f65"/>
                             </constraints>
                         </stackView>
                     </subviews>
@@ -48,7 +48,6 @@
                         <constraint firstAttribute="trailing" secondItem="PjR-EX-CoH" secondAttribute="trailing" id="7BB-bF-9xR"/>
                         <constraint firstItem="PjR-EX-CoH" firstAttribute="top" secondItem="4CD-cv-jYZ" secondAttribute="top" id="XMO-hA-kOv"/>
                         <constraint firstItem="PjR-EX-CoH" firstAttribute="leading" secondItem="4CD-cv-jYZ" secondAttribute="leading" id="ZMG-tR-9YU"/>
-                        <constraint firstAttribute="height" constant="10" id="ZpQ-Wy-vKo"/>
                     </constraints>
                 </view>
             </subviews>
@@ -59,9 +58,9 @@
                 <constraint firstItem="y0W-iR-zjk" firstAttribute="centerY" secondItem="6Dg-4D-a0y" secondAttribute="centerY" id="Yf5-rk-X4c"/>
                 <constraint firstItem="4CD-cv-jYZ" firstAttribute="top" secondItem="6Dg-4D-a0y" secondAttribute="bottom" constant="16" id="aQ0-5v-pAi"/>
                 <constraint firstItem="y0W-iR-zjk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Dg-4D-a0y" secondAttribute="trailing" constant="20" id="bzA-Qt-n9D"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4CD-cv-jYZ" secondAttribute="trailing" constant="12" id="db5-9F-0cM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4CD-cv-jYZ" secondAttribute="trailing" constant="16" id="db5-9F-0cM"/>
                 <constraint firstItem="6Dg-4D-a0y" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="j8Z-XE-TEv"/>
-                <constraint firstItem="4CD-cv-jYZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="nM6-8Q-37w"/>
+                <constraint firstItem="4CD-cv-jYZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="nM6-8Q-37w"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

@@ -9,8 +9,9 @@ end
 
 def common_pods
     utils
-
+	
     pod 'PluggableApplicationDelegate', :git => "https://github.com/surfstudio/PluggableApplicationDelegate.git", :commit=>"b24aabe3f34d51072cee5cac3b576dbb1f4ca9ec"
+    pod 'Nuke', '~> 8.4.1'
 
 end
 

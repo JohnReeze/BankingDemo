@@ -26,6 +26,7 @@ final class PlainProductCell: UICollectionViewCell {
     private func setupInitialState() {
         descriptionLabel.numberOfLines = 0
         balanceLabel.font = FontFamily.SFProRounded.bold.font(size: 40)
+        descriptionLabel.textColor = UIColor.secondaryLabel
     }
 
 }

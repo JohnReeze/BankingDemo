@@ -47,8 +47,8 @@ final class ProductOptionsView: UIView {
 
     private var currentState = CGSize()
     private var nextState = CGSize()
-    private var currentModel = ProductOptionsViewModel(actions: [])
-    private var nextModel = ProductOptionsViewModel(actions: [])
+    private var currentModel = ProductOptionsViewModel(actions: [], card: nil)
+    private var nextModel = ProductOptionsViewModel(actions: [], card: nil)
 
     // MARK: - Internal Methods
 

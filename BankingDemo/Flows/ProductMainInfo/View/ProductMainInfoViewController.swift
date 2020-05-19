@@ -71,7 +71,7 @@ extension ProductMainInfoViewController: ProductMainInfoViewInput {
         let mock2: ProductHeaderType = .card(.init(id: "2", title: "Альфа Банк", cardModel: CardViewModel(number: "1234", color: .red, logo: nil, typeIcon: CardType.visa.icon)))
 
         models.append(mock2)
-//        self.
+
         productsCarousel.configure(with: models,
                                    offset: 0.0,
                                    initialPage: 0)
@@ -80,12 +80,12 @@ extension ProductMainInfoViewController: ProductMainInfoViewInput {
         indicator.configure(lenght: models.count)
 
         optionsModels = [
-            .init(actions: [.requisites, .replenish, .pay]),
-            .init(actions: [.requisites, .pay]),
-            .init(actions: [.payByCard, .replenishFromCard]),
-            .init(actions: [.requisites, .pay])
+            .init(actions: [.requisites, .replenish, .pay], card: CardViewModel(number: "1234", color: .red, logo: nil, typeIcon: CardType.visa.icon)),
+            .init(actions: [.requisites, .pay], card: nil),
+            .init(actions: [.payByCard, .replenishFromCard], card: nil),
+            .init(actions: [.requisites, .pay], card: nil)
         ]
-        productOptionsView.configureCurrentState(model: .init(actions: [.requisites, .replenish, .pay]))
+        productOptionsView.configureCurrentState(model: .init(actions: [.requisites, .replenish, .pay], card:  CardViewModel(number: "1234", color: .red, logo: nil, typeIcon: CardType.masterCard.icon)))
     }
 
 //    func update(with models: [ProductMainInfoViewModel], selectedIndex: Int?) {

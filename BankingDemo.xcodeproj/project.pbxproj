@@ -137,6 +137,10 @@
 		0083C63824742D8900BB11B6 /* HistoryExpensesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C63624742D8900BB11B6 /* HistoryExpensesParser.swift */; };
 		0083C63B247435EC00BB11B6 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C63A247435EC00BB11B6 /* TitleView.swift */; };
 		0083C63C247435EC00BB11B6 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C63A247435EC00BB11B6 /* TitleView.swift */; };
+		0083C642247444EE00BB11B6 /* DetailedProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C641247444EE00BB11B6 /* DetailedProductView.swift */; };
+		0083C643247444EE00BB11B6 /* DetailedProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C641247444EE00BB11B6 /* DetailedProductView.swift */; };
+		0083C64524744B1F00BB11B6 /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C64424744B1F00BB11B6 /* AddProductView.swift */; };
+		0083C64624744B1F00BB11B6 /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083C64424744B1F00BB11B6 /* AddProductView.swift */; };
 		0094DF8724683C5100CF3874 /* DetailProductModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094DF7724683C5000CF3874 /* DetailProductModuleConfigurator.swift */; };
 		0094DF8824683C5100CF3874 /* DetailProductModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094DF7724683C5000CF3874 /* DetailProductModuleConfigurator.swift */; };
 		0094DF8924683C5100CF3874 /* DetailProductViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094DF7924683C5000CF3874 /* DetailProductViewInput.swift */; };
@@ -300,6 +304,8 @@
 		0083C6332474254A00BB11B6 /* ExpensesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesModel.swift; sourceTree = "<group>"; };
 		0083C63624742D8900BB11B6 /* HistoryExpensesParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExpensesParser.swift; sourceTree = "<group>"; };
 		0083C63A247435EC00BB11B6 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		0083C641247444EE00BB11B6 /* DetailedProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProductView.swift; sourceTree = "<group>"; };
+		0083C64424744B1F00BB11B6 /* AddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductView.swift; sourceTree = "<group>"; };
 		0094DF7724683C5000CF3874 /* DetailProductModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailProductModuleConfigurator.swift; sourceTree = "<group>"; };
 		0094DF7924683C5000CF3874 /* DetailProductViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailProductViewInput.swift; sourceTree = "<group>"; };
 		0094DF7A24683C5000CF3874 /* DetailProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailProductViewController.xib; sourceTree = "<group>"; };
@@ -638,6 +644,15 @@
 			path = TitleView;
 			sourceTree = "<group>";
 		};
+		0083C63D2474420E00BB11B6 /* DetailedProductView */ = {
+			isa = PBXGroup;
+			children = (
+				0083C641247444EE00BB11B6 /* DetailedProductView.swift */,
+				0083C64424744B1F00BB11B6 /* AddProductView.swift */,
+			);
+			path = DetailedProductView;
+			sourceTree = "<group>";
+		};
 		0094DF7624683C5000CF3874 /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
@@ -731,6 +746,7 @@
 		0094DFB4246850B800CF3874 /* ProductOptionsView */ = {
 			isa = PBXGroup;
 			children = (
+				0083C63D2474420E00BB11B6 /* DetailedProductView */,
 				0094DFB5246850B800CF3874 /* ProductOptionsView.swift */,
 				0094DFB6246850B800CF3874 /* ProductOptionView */,
 			);
@@ -1433,6 +1449,7 @@
 				0083C63824742D8900BB11B6 /* HistoryExpensesParser.swift in Sources */,
 				0094DFE1246850B800CF3874 /* ProductMainInfoViewOutput.swift in Sources */,
 				0083C62F2473EA2C00BB11B6 /* HistorySection.swift in Sources */,
+				0083C643247444EE00BB11B6 /* DetailedProductView.swift in Sources */,
 				00334405246ECC980058F5AD /* ProductDetailedInfoViewController.swift in Sources */,
 				00772DB12471C7AA00F5C311 /* HistoryService.swift in Sources */,
 				006E7D07246B042F00458B75 /* Fonts.swift in Sources */,
@@ -1496,6 +1513,7 @@
 				5D4A7B297D28C93B76357970 /* Strings.swift in Sources */,
 				00772DB82471E05F00F5C311 /* HistoryHeaderCell.swift in Sources */,
 				0033440F246ECC980058F5AD /* ProductDetailedInfoModuleConfigurator.swift in Sources */,
+				0083C64624744B1F00BB11B6 /* AddProductView.swift in Sources */,
 				B0D86F6FD09421EA4FDB3C64 /* UIApplication.swift in Sources */,
 				00334454246EF7770058F5AD /* ExpensesView.swift in Sources */,
 				006E7D29246DF42A00458B75 /* String.swift in Sources */,
@@ -1537,6 +1555,7 @@
 				0083C63724742D8900BB11B6 /* HistoryExpensesParser.swift in Sources */,
 				0094DFE0246850B800CF3874 /* ProductMainInfoViewOutput.swift in Sources */,
 				0083C62E2473EA2C00BB11B6 /* HistorySection.swift in Sources */,
+				0083C642247444EE00BB11B6 /* DetailedProductView.swift in Sources */,
 				00334404246ECC980058F5AD /* ProductDetailedInfoViewController.swift in Sources */,
 				00772DB02471C7AA00F5C311 /* HistoryService.swift in Sources */,
 				006E7D06246B042F00458B75 /* Fonts.swift in Sources */,
@@ -1600,6 +1619,7 @@
 				15E296EC10446AA26E4FF535 /* Strings.swift in Sources */,
 				00772DB72471E05F00F5C311 /* HistoryHeaderCell.swift in Sources */,
 				0033440E246ECC980058F5AD /* ProductDetailedInfoModuleConfigurator.swift in Sources */,
+				0083C64524744B1F00BB11B6 /* AddProductView.swift in Sources */,
 				087BD819C3B10C1A40483D45 /* UIApplication.swift in Sources */,
 				00334453246EF7770058F5AD /* ExpensesView.swift in Sources */,
 				006E7D28246DF42A00458B75 /* String.swift in Sources */,

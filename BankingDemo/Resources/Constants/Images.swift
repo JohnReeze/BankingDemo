@@ -41,6 +41,7 @@ public enum Styles {
       public static let mir = ImageAsset(name: "Images/CardType/mir")
       public static let visa = ImageAsset(name: "Images/CardType/visa")
     }
+    public static let addCard = ImageAsset(name: "Images/addCard")
     public static let pay = ImageAsset(name: "Images/pay")
     public static let plus = ImageAsset(name: "Images/plus")
     public static let requisites = ImageAsset(name: "Images/requisites")

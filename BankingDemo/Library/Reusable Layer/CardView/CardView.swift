@@ -27,6 +27,16 @@ final class CardView: DesignableView {
         setupInitialState()
     }
 
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupInitialState()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupInitialState()
+    }
+
     // MARK: - Internal methods
 
     func configure(with model: CardViewModel) {

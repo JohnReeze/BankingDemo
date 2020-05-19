@@ -35,7 +35,11 @@ final class DetailedProductView: UIView {
         stackView.addArrangedSubview(mainContainer)
         stackView.addArrangedSubview(additionalContainer)
         stackView.spacing = 16
-        stackView.fillSuperview()
+        stackView.alignment = .leading
+        stackView.anchor(top: self.topAnchor,
+                         leading: self.leadingAnchor,
+                         bottom: self.bottomAnchor,
+                         trailing: nil)
     }
 
 }

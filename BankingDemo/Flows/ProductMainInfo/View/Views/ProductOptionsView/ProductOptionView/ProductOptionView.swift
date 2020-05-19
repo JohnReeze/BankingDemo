@@ -27,6 +27,7 @@ final class ProductOptionView: DesignableView {
 
     private var model = ProductOptionsViewModel(actions: [], card: nil)
     private lazy var cardView = CardView(frame: .init(x: 0, y: 0, width: 60, height: 40))
+    private lazy var addCardView = AddProductView(frame: .init(x: 0, y: 0, width: 60, height: 40))
 
     // MARK: - UIView
 
@@ -57,6 +58,11 @@ final class ProductOptionView: DesignableView {
         }
         cardView.configure(with: card)
         detailProductView.setMainView(cardView)
+        let t = cardView.widthAnchor.constraint(equalToConstant: 60)
+        t.isActive = true
+        let c = addCardView.widthAnchor.constraint(equalToConstant: 60)
+        c.isActive = true
+        detailProductView.setAdditionalView(addCardView)
     }
 
     func getRequiredHeight() -> CGFloat {

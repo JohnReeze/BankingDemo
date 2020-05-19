@@ -11,6 +11,8 @@ final class AddProductView: UIView {
 
     private let addImageView = UIImageView()
 
+    // MARK: - UIView
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setupInitialState()
@@ -26,9 +28,14 @@ final class AddProductView: UIView {
         setupInitialState()
     }
 
+    // MARK: - Private methods
+
     private func setupInitialState() {
         self.addSubview(addImageView)
         addImageView.image = Styles.Images.addCard.image
+        addImageView.fillSuperview()
+        self.layer.cornerRadius = 4
+        self.backgroundColor = Styles.Colors.addCardBackround.color
     }
-}
 
+}

@@ -166,6 +166,7 @@ private extension ProductMainInfoViewController {
         productsCarousel.didScroll = { [weak self] (stateModel, didEndChange) in
             guard let self = self else { return }
 
+            print(stateModel)
             self.indicator.set(progress: stateModel.progress, from: stateModel.fromPage, to: stateModel.toPage)
 
             if self.currentState != stateModel.fromPage {

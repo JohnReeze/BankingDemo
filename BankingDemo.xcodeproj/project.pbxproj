@@ -746,9 +746,8 @@
 		0094DFB4246850B800CF3874 /* ProductOptionsView */ = {
 			isa = PBXGroup;
 			children = (
-				0083C63D2474420E00BB11B6 /* DetailedProductView */,
-				0094DFB5246850B800CF3874 /* ProductOptionsView.swift */,
 				0094DFB6246850B800CF3874 /* ProductOptionView */,
+				0094DFB5246850B800CF3874 /* ProductOptionsView.swift */,
 			);
 			path = ProductOptionsView;
 			sourceTree = "<group>";
@@ -756,6 +755,7 @@
 		0094DFB6246850B800CF3874 /* ProductOptionView */ = {
 			isa = PBXGroup;
 			children = (
+				0083C63D2474420E00BB11B6 /* DetailedProductView */,
 				0094DFB7246850B800CF3874 /* ProductOptionView.xib */,
 				0094DFB8246850B800CF3874 /* ProductOptionView.swift */,
 			);

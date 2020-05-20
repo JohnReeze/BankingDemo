@@ -21,10 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0W-iR-zjk">
-                    <rect key="frame" x="390" y="6.5" width="115" height="21"/>
+                    <rect key="frame" x="489" y="6.5" width="16" height="21"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                     <inset key="titleEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="44 343,34 $" image="arrowDown"/>
+                    <state key="normal" image="arrowDown"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Траты за май" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Dg-4D-a0y">
                     <rect key="frame" x="12" y="4" width="133.5" height="25.5"/>

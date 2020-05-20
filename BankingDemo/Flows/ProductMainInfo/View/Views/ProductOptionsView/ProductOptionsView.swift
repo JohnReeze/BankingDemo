@@ -53,7 +53,12 @@ final class ProductOptionsView: UIView {
     // MARK: - Internal Methods
 
     func getRequiredHeight(for state: State) -> CGFloat {
-        return currentStateView.getRequiredHeight()
+        switch state {
+        case .current:
+            return currentStateView.getRequiredHeight(for: currentModel)
+        case .next:
+            return currentStateView.getRequiredHeight(for: nextModel)
+        }
     }
 
     func configureCurrentState(model: ProductOptionsViewModel) {

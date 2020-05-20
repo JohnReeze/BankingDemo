@@ -7,6 +7,14 @@ import UIKit
 
 final class ProductOptionView: DesignableView {
 
+    // MARK: - Constants
+
+    private enum Constants {
+        static let withDetailOffset: CGFloat = 94
+        static let withoutDetailOffset: CGFloat = 60
+        static let defaultBottomOffset: CGFloat = 30
+    }
+
     // MARK: - IBOutlets
 
     @IBOutlet private weak var actionsView: ActionsView!
@@ -26,8 +34,18 @@ final class ProductOptionView: DesignableView {
     // MARK: - Private Properties
 
     private var model = ProductOptionsViewModel(actions: [], card: nil)
-    private lazy var cardView = CardView(frame: .init(x: 0, y: 0, width: 60, height: 40))
-    private lazy var addCardView = AddProductView(frame: .init(x: 0, y: 0, width: 60, height: 40))
+    private lazy var cardView: CardView = {
+        let view = CardView(frame: .init(x: 0, y: 0, width: 60, height: 40))
+        let cardWidthConstraint = view.widthAnchor.constraint(equalToConstant: 60)
+        cardWidthConstraint.isActive = true
+        return view
+    }()
+    private lazy var addCardView: AddProductView = {
+        let view = AddProductView(frame: .init(x: 0, y: 0, width: 60, height: 40))
+        let addCardWidthConstraint = view.widthAnchor.constraint(equalToConstant: 60)
+        addCardWidthConstraint.isActive = true
+        return view
+    }()
 
     // MARK: - UIView
 
@@ -38,12 +56,12 @@ final class ProductOptionView: DesignableView {
 
     // MARK: - Initialization
 
-    public required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupInitialState()
     }
 
-    public override init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialState()
     }
@@ -54,19 +72,19 @@ final class ProductOptionView: DesignableView {
         self.model = model
         actionsView.configure(with: model.actions)
         guard let card = model.card else {
+            detailProductView.isHidden = true
             return
         }
-        cardView.configure(with: card)
-        detailProductView.setMainView(cardView)
-        let t = cardView.widthAnchor.constraint(equalToConstant: 60)
-        t.isActive = true
-        let c = addCardView.widthAnchor.constraint(equalToConstant: 60)
-        c.isActive = true
-        detailProductView.setAdditionalView(addCardView)
+        detailProductView.isHidden = false
+        configureDetailView(cardModel: card)
     }
 
-    func getRequiredHeight() -> CGFloat {
-        return 200
+    func getRequiredHeight(for model: ProductOptionsViewModel) -> CGFloat {
+        return [
+            model.card.isSome ? Constants.withDetailOffset : Constants.withDetailOffset,
+            ActionsView.getRequiredSize(for: model.actions).height,
+            Constants.defaultBottomOffset
+        ].reduce(0, +)
     }
 
     func setActionsSize(_ size: CGSize) {
@@ -76,6 +94,7 @@ final class ProductOptionView: DesignableView {
 
     func setActionsAplha(_ newValue: CGFloat) {
         actionsView.setActionsApla(newValue)
+        detailProductView.alpha = newValue
     }
 
 }
@@ -88,9 +107,10 @@ private extension ProductOptionView {
         self.backgroundColor = .clear
     }
 
-}
+    func configureDetailView(cardModel: CardViewModel) {
+        cardView.configure(with: cardModel)
+        detailProductView.setMainView(cardView)
+        detailProductView.setAdditionalView(addCardView)
+    }
 
-// MARK: - Actions
-
-private extension ProductOptionView {
 }

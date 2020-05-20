@@ -18,6 +18,38 @@
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum Styles {
+  public enum Colors {
+
+    public enum Categories {
+      public static let cash = ColorAsset(name: "Colors/Categories/cash")
+      public static let checmistry = ColorAsset(name: "Colors/Categories/checmistry")
+      public static let fastfood = ColorAsset(name: "Colors/Categories/fastfood")
+      public static let other = ColorAsset(name: "Colors/Categories/other")
+      public static let supermarkets = ColorAsset(name: "Colors/Categories/supermarkets")
+    }
+    public static let addCardBackround = ColorAsset(name: "Colors/addCardBackround")
+    public static let cardBorder = ColorAsset(name: "Colors/cardBorder")
+    public static let darkGrdientEnd = ColorAsset(name: "Colors/darkGrdientEnd")
+    public static let darkGrdientStart = ColorAsset(name: "Colors/darkGrdientStart")
+    public static let indicator = ColorAsset(name: "Colors/indicator")
+    public static let main = ColorAsset(name: "Colors/main")
+    public static let mainBlue = ColorAsset(name: "Colors/mainBlue")
+    public static let placeholderColor = ColorAsset(name: "Colors/placeholderColor")
+  }
+  public enum Images {
+
+    public enum CardType {
+      public static let master = ImageAsset(name: "Images/CardType/master")
+      public static let mir = ImageAsset(name: "Images/CardType/mir")
+      public static let visa = ImageAsset(name: "Images/CardType/visa")
+    }
+    public static let addCard = ImageAsset(name: "Images/addCard")
+    public static let pay = ImageAsset(name: "Images/pay")
+    public static let plus = ImageAsset(name: "Images/plus")
+    public static let requisites = ImageAsset(name: "Images/requisites")
+    public static let settings = ImageAsset(name: "Images/settings")
+  }
+  public static let arrowDown = ImageAsset(name: "arrowDown")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

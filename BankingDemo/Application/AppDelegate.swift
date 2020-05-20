@@ -1,7 +1,3 @@
-//
-//  Copyright © 2020 Surf. All rights reserved.
-//
-
 import PluggableApplicationDelegate
 import UIKit
 

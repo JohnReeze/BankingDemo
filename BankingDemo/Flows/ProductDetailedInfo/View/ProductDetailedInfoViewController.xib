@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductDetailedInfoViewController" customModule="BankingDemoDebug" customModuleProvider="target">
+            <connections>
+                <outlet property="expensesHeightConstraint" destination="gdP-SI-2vS" id="DAc-Zp-fJR"/>
+                <outlet property="expensesView" destination="VUd-wR-jwj" id="XHw-3M-tvM"/>
+                <outlet property="pageContainer" destination="yX9-hD-gSB" id="v4R-UW-qei"/>
+                <outlet property="pageTopConstraint" destination="FgY-86-3mF" id="aUx-Dp-Y8e"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yX9-hD-gSB">
+                    <rect key="frame" x="0.0" y="64" width="414" height="798"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUd-wR-jwj" customClass="ExpensesView" customModule="BankingDemoDebug" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="gdP-SI-2vS"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VUd-wR-jwj" secondAttribute="trailing" id="3N9-Cn-5w8"/>
+                <constraint firstItem="yX9-hD-gSB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="FgY-86-3mF"/>
+                <constraint firstItem="VUd-wR-jwj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HLJ-e9-DGd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="yX9-hD-gSB" secondAttribute="bottom" id="JNG-L8-saB"/>
+                <constraint firstItem="VUd-wR-jwj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="URY-7w-o5G"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yX9-hD-gSB" secondAttribute="trailing" id="bA9-ST-Gpx"/>
+                <constraint firstItem="yX9-hD-gSB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nlO-Go-v70"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131.8840579710145" y="140.625"/>
+        </view>
+    </objects>
+</document>

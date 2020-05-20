@@ -82,7 +82,6 @@ extension ProductDetailedInfoViewController: ProductDetailedInfoViewInput {
 
         let fromOffset = hadExpenses ? Constants.defaultOffset : 0
         let toOffset = willHaveExpenses ? Constants.defaultOffset : 0
-        print(fromOffset, toOffset, progress)
         pageTopConstraint.constant = fromOffset - CGFloat(progress) * (fromOffset - toOffset)
     }
 

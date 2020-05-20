@@ -59,7 +59,7 @@ extension DetailProductPresenter: DetailProductViewOutput {
     }
 
     func updateAction() {
-
+        detailedContentInput?.forceUpdate()
     }
 
 }

@@ -46,8 +46,10 @@ extension ProductDetailedInfoPresenter: ProductDetailedInfoInput {
         if newState.progress > Constants.halfProgress {
             guard newState.toPage != nextState else { return }
             nextState = newState.toPage
+            models[safe: nextState] ~> { historyInput?.update(for: $0.id) }
         } else if nextState != currentState {
             nextState = newState.fromPage
+            models[safe: nextState] ~> { historyInput?.update(for: $0.id) }
         }
     }
 

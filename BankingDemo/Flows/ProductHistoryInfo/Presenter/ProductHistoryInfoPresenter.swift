@@ -1,6 +1,6 @@
 //
 //  ProductHistoryInfoPresenter.swift
-//  ZenitOnline
+//  BankingDemo
 //
 
 final class ProductHistoryInfoPresenter {

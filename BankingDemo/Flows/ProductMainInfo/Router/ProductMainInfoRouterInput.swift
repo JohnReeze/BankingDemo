@@ -1,6 +1,6 @@
 //
 //  ProductMainInfoRouterInput.swift
-//  ZenitOnline
+//  BankingDemo
 //
 
 protocol ProductMainInfoRouterInput: class {

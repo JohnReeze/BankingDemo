@@ -1,6 +1,6 @@
 //
 //  ContentCollaborativeViewController.swift
-//  ZenitOnline
+//  BankingDemo
 //
 
 import UIKit

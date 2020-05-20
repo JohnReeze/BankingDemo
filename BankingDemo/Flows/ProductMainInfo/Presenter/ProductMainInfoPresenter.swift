@@ -1,6 +1,6 @@
 //
 //  ProductMainInfoPresenter.swift
-//  ZenitOnline
+//  BankingDemo
 //
 //  Created by Mikhail Monakov on 27/01/2020.
 //  Copyright © 2020 Surf. All rights reserved.
@@ -28,10 +28,6 @@ extension ProductMainInfoPresenter: ProductMainInfoViewOutput {
     func didSelectAction(_ action: ProductFastActionType) {
     }
 
-    func didSelectCard(at index: Int?) {
-        output?.didSelectCard(at: index)
-    }
-
     func didStateChanged(_ newState: ProductStateViewModel) {
         output?.didStateChanged(newState)
     }
@@ -46,4 +42,7 @@ extension ProductMainInfoPresenter: ProductMainInfoViewOutput {
 
 extension ProductMainInfoPresenter: ProductMainInfoInput {
 
+    func configure(with models: [ProductViewModel]) {
+        view?.configure(with: models)
+    }
 }

@@ -12,7 +12,7 @@ final class DetailProductModuleConfigurator {
     func configure() -> UIViewController {
         let view = DetailProductViewController()
 
-        let presenter = DetailProductPresenter()
+        let presenter = DetailProductPresenter(productService: ProdcutMockService())
         let router = DetailProductRouter()
 
         let (headerView, headerInput) = ProductMainInfoModuleConfigurator().configure(rootView: view, output: presenter)

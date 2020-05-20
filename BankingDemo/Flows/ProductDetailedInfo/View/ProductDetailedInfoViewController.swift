@@ -1,6 +1,6 @@
 //
 //  ProductDetailedInfoViewController.swift
-//  ZenitOnline
+//  BankingDemo
 //
 
 import UIKit

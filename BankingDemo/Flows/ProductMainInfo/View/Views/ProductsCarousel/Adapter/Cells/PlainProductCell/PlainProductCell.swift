@@ -1,6 +1,6 @@
 //
 //  PlainProductCell.swift
-//  ZenitOnline
+//  BankingDemo
 //
 
 import UIKit
@@ -19,6 +19,14 @@ final class PlainProductCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupInitialState()
+    }
+
+    // MARK: - Internal methods
+
+    func configure(title: String, balance: String, description: String?) {
+        titleLabel.text = title
+        balanceLabel.text = balance
+        descriptionLabel.text = description
     }
 
     // MARK: - Private methods

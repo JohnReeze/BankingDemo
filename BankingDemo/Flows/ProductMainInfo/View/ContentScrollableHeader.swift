@@ -1,12 +1,11 @@
 //
 //  ContentScrollableHeader.swift
-//  ZenitOnline
+//  BankingDemo
 //
 
 import UIKit
 
 protocol ContentScrollableHeader: class, ContentAnimatable, ContentSourceable {
-    func setContentOffset(_ newOffset: CGFloat)
     func setContentHeightConstraint(_ constraint: NSLayoutConstraint)
 }
 

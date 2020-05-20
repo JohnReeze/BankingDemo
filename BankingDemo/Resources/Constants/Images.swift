@@ -28,6 +28,7 @@ public enum Styles {
       public static let supermarkets = ColorAsset(name: "Colors/Categories/supermarkets")
     }
     public static let addCardBackround = ColorAsset(name: "Colors/addCardBackround")
+    public static let cardBorder = ColorAsset(name: "Colors/cardBorder")
     public static let darkGrdientEnd = ColorAsset(name: "Colors/darkGrdientEnd")
     public static let darkGrdientStart = ColorAsset(name: "Colors/darkGrdientStart")
     public static let indicator = ColorAsset(name: "Colors/indicator")

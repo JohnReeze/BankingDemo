@@ -1,16 +1,12 @@
 //
 //  ProductOptionsView.swift
-//  ZenitOnline
-//
-//  Created by Mikhail Monakov on 21/01/2020.
-//  Copyright © 2020 Surf. All rights reserved.
+//  BankingDemo
 //
 
 import UIKit
 
 protocol ProductOptionsViewDelegate: class {
     func didSelectAction(_ action: ProductFastActionType)
-    func didSelectCard(at index: Int?)
 }
 
 final class ProductOptionsView: UIView {
@@ -104,7 +100,6 @@ private extension ProductOptionsView {
         currentStateView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(currentStateView)
         currentStateView.fillSuperview()
-        currentStateView.didSelectCard = weak(self) { $0.delegate?.didSelectCard(at: $1) }
         currentStateView.didSelectAction = weak(self) { $0.delegate?.didSelectAction($1) }
     }
 

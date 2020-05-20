@@ -21,17 +21,9 @@ extension OperationsPayload {
         }
     }
 
-    enum Currency: String {
-        case rub = "RUB"
-
-        var sign: String {
-            return "₽"
-        }
-    }
-
     var sumString: String {
         let value = amount.value.formattedDoubleValue
-        let withCurrency = (Currency(rawValue: amount.currency.name)?.sign ~> { "\(value) \($0)" }) ?? value
+        let withCurrency = [value, amount.currency.sign].joined(separator: " ")
         guard let type = TranfserType(rawValue: type) else {
             return withCurrency
         }
@@ -43,11 +35,15 @@ extension OperationsPayload {
 extension Double {
 
     var formattedDoubleValue: String {
-        let nf = NumberFormatter()
-        nf.locale = NSLocale.current
-        let decimalSeparator = nf.decimalSeparator ?? "."
-        let floatString = String(format: "%.2f", self)
-        return floatString.replacingOccurrences(of: ".", with: decimalSeparator)
+        let formatter = NumberFormatter()
+        formatter.locale = NSLocale.current
+        formatter.usesGroupingSeparator = true
+        formatter.groupingSeparator = " "
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
+        formatter.numberStyle = .decimal
+        return formatter.string(from: NSNumber(floatLiteral: self)) ?? ""
     }
 
 }

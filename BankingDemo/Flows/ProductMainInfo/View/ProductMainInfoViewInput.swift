@@ -1,10 +1,9 @@
 //
 //  ProductMainInfoViewInput.swift
-//  ZenitOnline
+//  BankingDemo
 //
 
 protocol ProductMainInfoViewInput: class {
     func setupInitialState()
-
-    func setLoading(_ isLoading: Bool)
+    func configure(with models: [ProductViewModel])
 }

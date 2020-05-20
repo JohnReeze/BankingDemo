@@ -66,20 +66,6 @@ final class DetailProductViewController: UIViewController, ModuleTransitionable 
         output?.viewLoaded()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        output?.viewDidAppear()
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        output?.viewWillDisappear()
-    }
-
     override func observeValue(forKeyPath keyPath: String?,
                                of object: Any?,
                                change: [NSKeyValueChangeKey: Any]?,
@@ -126,7 +112,6 @@ extension DetailProductViewController: ContentScrollable {
 extension DetailProductViewController: UIScrollViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        headerContent?.setContentOffset(scrollView.contentOffset.y)
         handleScroll(mainScrollView)
     }
 

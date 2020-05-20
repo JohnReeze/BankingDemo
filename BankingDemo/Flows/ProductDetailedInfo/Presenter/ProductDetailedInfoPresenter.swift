@@ -1,6 +1,6 @@
 //
 //  ProductDetailedInfoPresenter.swift
-//  ZenitOnline
+//  BankingDemo
 //
 
 final class ProductDetailedInfoPresenter {
@@ -22,7 +22,7 @@ final class ProductDetailedInfoPresenter {
 
     private var currentState: DetailProductState = 0
     private var nextState: DetailProductState = 0
-    private var models: [String] = []
+    private var models: [ProductViewModel] = []
     private var currentTabIndex = 0
 
 }
@@ -30,6 +30,14 @@ final class ProductDetailedInfoPresenter {
 // MARK: - ProductDetailedInfoInput
 
 extension ProductDetailedInfoPresenter: ProductDetailedInfoInput {
+
+    func configure(with models: [ProductViewModel]) {
+        self.models = models
+        self.currentState = 0
+        self.nextState = 0
+        updateStates(for: 0)
+        models.first?.id ~> historyInput?.update
+    }
 
     func didChangedState(_ newState: ProductStateViewModel) {
         view?.setStateChangeProgress(newState.progress)
@@ -41,13 +49,6 @@ extension ProductDetailedInfoPresenter: ProductDetailedInfoInput {
         } else if nextState != currentState {
             nextState = newState.fromPage
         }
-    }
-
-    func configure(with models: [String], selectedIndex: Int) {
-        self.models = models
-        self.currentState = selectedIndex
-        self.nextState = selectedIndex
-        updateStates(for: selectedIndex)
     }
 
     func forceUpdate() {

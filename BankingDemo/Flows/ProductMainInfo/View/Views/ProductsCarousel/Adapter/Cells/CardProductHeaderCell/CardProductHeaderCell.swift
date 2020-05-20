@@ -1,6 +1,6 @@
 //
 //  CardProductHeaderCell.swift
-//  ZenitOnline
+//  BankingDemo
 //
 
 import UIKit

@@ -1,6 +1,6 @@
 //
 //  ProductHistoryInfoInput.swift
-//  ZenitOnline
+//  BankingDemo
 //
 
 protocol ProductHistoryInfoInput: class {

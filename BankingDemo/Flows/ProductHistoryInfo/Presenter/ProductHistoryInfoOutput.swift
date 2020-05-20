@@ -1,6 +1,6 @@
 //
 //  ProductHistoryInfoOutput.swift
-//  ZenitOnline
+//  BankingDemo
 //
 
 protocol ProductHistoryInfoOutput: class {

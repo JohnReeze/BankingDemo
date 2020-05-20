@@ -5,49 +5,6 @@
 
 import UIKit
 
-enum ProductFastActionType: Int {
-    case requisites
-    case replenish
-    case pay
-    case replenishFromCard
-    case payByCard
-
-    var title: String {
-        switch self {
-        case .requisites:
-            return L10n.Actions.requisites
-        case .pay:
-            return L10n.Actions.pay
-        case .replenish:
-            return L10n.Actions.replanish
-        case .replenishFromCard:
-            return L10n.Actions.replenishFromCard
-        case .payByCard:
-            return L10n.Actions.payByCard
-        }
-    }
-
-    var isLongTitle: Bool {
-        switch self {
-        case .replenishFromCard, .payByCard:
-            return true
-        default:
-            return false
-        }
-    }
-
-    var icon: UIImage {
-        switch self {
-        case .payByCard, .pay:
-            return Styles.Images.pay.image.mask(with: .white).withRenderingMode(.alwaysOriginal)
-        case .replenishFromCard, .replenish:
-            return Styles.Images.plus.image.mask(with: .white).withRenderingMode(.alwaysOriginal)
-        case .requisites:
-            return Styles.Images.requisites.image.mask(with: .white).withRenderingMode(.alwaysOriginal)
-        }
-    }
-}
-
 final class ActionsView: UIView {
 
     // MARK: - Constants
@@ -79,17 +36,15 @@ final class ActionsView: UIView {
     // MARK: - UIView
 
     override func awakeFromNib() {
+        super.awakeFromNib()
         self.layer.masksToBounds = true
+        layer.cornerRadius = 20
         stackView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(stackView)
         stackView.anchor(top: self.topAnchor, leading: nil, bottom: self.bottomAnchor, trailing: nil)
         stackView.anchorCenter(to: self)
-    }
-
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        configureGradient(rect)
-        layer.cornerRadius = 20
+        gradient.frame = self.bounds
+        self.layer.insertSublayer(gradient, at: 0)
     }
 
     static func getRequiredSize(for types: [ProductFastActionType]) -> CGSize {
@@ -120,11 +75,6 @@ final class ActionsView: UIView {
 // MARK: - Private methods
 
 private extension ActionsView {
-
-    func configureGradient(_ rect: CGRect) {
-        gradient.frame = rect
-        self.layer.insertSublayer(gradient, at: 0)
-    }
 
     func createButton(for type: ProductFastActionType) -> UIButton {
         let size = CGSize(width: Constants.buttonWidth,

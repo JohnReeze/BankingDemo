@@ -73,6 +73,16 @@
 		004CA1BE2472CEB0005AE9F1 /* LoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CA1BC2472CEB0005AE9F1 /* LoadableView.swift */; };
 		004CA1C12472D4D5005AE9F1 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CA1C02472D4D5005AE9F1 /* UITableView.swift */; };
 		004CA1C22472D4D5005AE9F1 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CA1C02472D4D5005AE9F1 /* UITableView.swift */; };
+		006169882475675F00741B02 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006169872475675F00741B02 /* ProductViewModel.swift */; };
+		006169892475675F00741B02 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006169872475675F00741B02 /* ProductViewModel.swift */; };
+		0061698B24756C1D00741B02 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0061698A24756C1D00741B02 /* ProductService.swift */; };
+		0061698C24756C1D00741B02 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0061698A24756C1D00741B02 /* ProductService.swift */; };
+		0061698E24756C4100741B02 /* ProductMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0061698D24756C4100741B02 /* ProductMockService.swift */; };
+		0061698F24756C4100741B02 /* ProductMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0061698D24756C4100741B02 /* ProductMockService.swift */; };
+		00616992247575BA00741B02 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00616991247575BA00741B02 /* UIColor.swift */; };
+		00616993247575BA00741B02 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00616991247575BA00741B02 /* UIColor.swift */; };
+		00616995247578F200741B02 /* ProductFastActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00616994247578F200741B02 /* ProductFastActionType.swift */; };
+		00616996247578F200741B02 /* ProductFastActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00616994247578F200741B02 /* ProductFastActionType.swift */; };
 		0067536224670CD200B035A6 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067536124670CD200B035A6 /* Weak.swift */; };
 		0067536324670CD200B035A6 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067536124670CD200B035A6 /* Weak.swift */; };
 		0067536524670D9E00B035A6 /* SoftUnwrapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067536424670D9E00B035A6 /* SoftUnwrapp.swift */; };
@@ -272,6 +282,11 @@
 		004CA1B62472CA57005AE9F1 /* HistoryLoaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryLoaderCell.xib; sourceTree = "<group>"; };
 		004CA1BC2472CEB0005AE9F1 /* LoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableView.swift; sourceTree = "<group>"; };
 		004CA1C02472D4D5005AE9F1 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		006169872475675F00741B02 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		0061698A24756C1D00741B02 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		0061698D24756C4100741B02 /* ProductMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMockService.swift; sourceTree = "<group>"; };
+		00616991247575BA00741B02 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		00616994247578F200741B02 /* ProductFastActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFastActionType.swift; sourceTree = "<group>"; };
 		0067536124670CD200B035A6 /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 		0067536424670D9E00B035A6 /* SoftUnwrapp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftUnwrapp.swift; sourceTree = "<group>"; };
 		0067536824670EA300B035A6 /* CollaborativeScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollaborativeScrollView.swift; sourceTree = "<group>"; };
@@ -528,9 +543,18 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		006169862475674E00741B02 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				006169872475675F00741B02 /* ProductViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		00675241246709DF00B035A6 /* DetailProduct */ = {
 			isa = PBXGroup;
 			children = (
+				006169862475674E00741B02 /* Models */,
 				0094DF7624683C5000CF3874 /* Configurator */,
 				0094DF7E24683C5100CF3874 /* Presenter */,
 				0094DF8124683C5100CF3874 /* Router */,
@@ -862,6 +886,7 @@
 				003343E3246EC6620058F5AD /* UINavigationController.swift */,
 				00334414246ED0540058F5AD /* UIScrollView.swift */,
 				004CA1C02472D4D5005AE9F1 /* UITableView.swift */,
+				00616991247575BA00741B02 /* UIColor.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -964,6 +989,7 @@
 				00675375246713BA00B035A6 /* FinanceProductType.swift */,
 				006E7D0F246C098400458B75 /* CardType.swift */,
 				00334458246EFC030058F5AD /* ExpenseType.swift */,
+				00616994247578F200741B02 /* ProductFastActionType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1049,6 +1075,8 @@
 			children = (
 				00772DAF2471C7AA00F5C311 /* HistoryService.swift */,
 				00772DB22471C7E700F5C311 /* HistoryMockService.swift */,
+				0061698A24756C1D00741B02 /* ProductService.swift */,
+				0061698D24756C4100741B02 /* ProductMockService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1460,8 +1488,10 @@
 				0094DFA224683EF800CF3874 /* Durations.swift in Sources */,
 				0094DF9A24683C5100CF3874 /* DetailProductRouterInput.swift in Sources */,
 				0094DF8A24683C5100CF3874 /* DetailProductViewInput.swift in Sources */,
+				00616993247575BA00741B02 /* UIColor.swift in Sources */,
 				0094DF9024683C5100CF3874 /* DetailProductViewOutput.swift in Sources */,
 				00334451246EE6A80058F5AD /* ProductHistoryInfoRouter.swift in Sources */,
+				0061698C24756C1D00741B02 /* ProductService.swift in Sources */,
 				0033444D246EE6A80058F5AD /* ProductHistoryInfoModuleConfigurator.swift in Sources */,
 				00334432246ED5BB0058F5AD /* ContentCollaborativeViewInput.swift in Sources */,
 				0033442E246ED5BB0058F5AD /* ContentCollaborativeViewOutput.swift in Sources */,
@@ -1478,6 +1508,7 @@
 				00334443246EE6A70058F5AD /* ProductHistoryInfoViewModel.swift in Sources */,
 				003343FD246ECC980058F5AD /* ProductDetailedInfoPresenter.swift in Sources */,
 				006E7D0B246B07CC00458B75 /* CardView.swift in Sources */,
+				00616996247578F200741B02 /* ProductFastActionType.swift in Sources */,
 				0094DF9424683C5100CF3874 /* DetailProductPresenter.swift in Sources */,
 				0067536324670CD200B035A6 /* Weak.swift in Sources */,
 				006E7CFE246B021400458B75 /* Images.swift in Sources */,
@@ -1493,12 +1524,14 @@
 				003343FB246ECC980058F5AD /* ProductDetailedInfoOutput.swift in Sources */,
 				00675377246713BA00B035A6 /* FinanceProductType.swift in Sources */,
 				0067536D2467113900B035A6 /* Closure.swift in Sources */,
+				0061698F24756C4100741B02 /* ProductMockService.swift in Sources */,
 				0083C63C247435EC00BB11B6 /* TitleView.swift in Sources */,
 				0094DF8E24683C5100CF3874 /* DetailProductViewController.swift in Sources */,
 				006753712467130900B035A6 /* Array.swift in Sources */,
 				0094DFFB246850B800CF3874 /* ProductMainInfoRouterInput.swift in Sources */,
 				00334449246EE6A80058F5AD /* ProductHistoryInfoInput.swift in Sources */,
 				006E7D26246DF3E100458B75 /* CenteredImageButton.swift in Sources */,
+				006169892475675F00741B02 /* ProductViewModel.swift in Sources */,
 				0094DFE3246850B800CF3874 /* ProductOptionsView.swift in Sources */,
 				004CA1BE2472CEB0005AE9F1 /* LoadableView.swift in Sources */,
 				00772DB42471C7E700F5C311 /* HistoryMockService.swift in Sources */,
@@ -1566,8 +1599,10 @@
 				0094DFA124683EF800CF3874 /* Durations.swift in Sources */,
 				0094DF9924683C5100CF3874 /* DetailProductRouterInput.swift in Sources */,
 				0094DF8924683C5100CF3874 /* DetailProductViewInput.swift in Sources */,
+				00616992247575BA00741B02 /* UIColor.swift in Sources */,
 				0094DF8F24683C5100CF3874 /* DetailProductViewOutput.swift in Sources */,
 				00334450246EE6A80058F5AD /* ProductHistoryInfoRouter.swift in Sources */,
+				0061698B24756C1D00741B02 /* ProductService.swift in Sources */,
 				0033444C246EE6A80058F5AD /* ProductHistoryInfoModuleConfigurator.swift in Sources */,
 				00334431246ED5BB0058F5AD /* ContentCollaborativeViewInput.swift in Sources */,
 				0033442D246ED5BB0058F5AD /* ContentCollaborativeViewOutput.swift in Sources */,
@@ -1584,6 +1619,7 @@
 				00334442246EE6A70058F5AD /* ProductHistoryInfoViewModel.swift in Sources */,
 				003343FC246ECC980058F5AD /* ProductDetailedInfoPresenter.swift in Sources */,
 				006E7D0A246B07CC00458B75 /* CardView.swift in Sources */,
+				00616995247578F200741B02 /* ProductFastActionType.swift in Sources */,
 				0094DF9324683C5100CF3874 /* DetailProductPresenter.swift in Sources */,
 				0067536224670CD200B035A6 /* Weak.swift in Sources */,
 				006E7CFD246B021400458B75 /* Images.swift in Sources */,
@@ -1599,12 +1635,14 @@
 				003343FA246ECC980058F5AD /* ProductDetailedInfoOutput.swift in Sources */,
 				00675376246713BA00B035A6 /* FinanceProductType.swift in Sources */,
 				0067536C2467113900B035A6 /* Closure.swift in Sources */,
+				0061698E24756C4100741B02 /* ProductMockService.swift in Sources */,
 				0083C63B247435EC00BB11B6 /* TitleView.swift in Sources */,
 				0094DF8D24683C5100CF3874 /* DetailProductViewController.swift in Sources */,
 				006753702467130900B035A6 /* Array.swift in Sources */,
 				0094DFFA246850B800CF3874 /* ProductMainInfoRouterInput.swift in Sources */,
 				00334448246EE6A80058F5AD /* ProductHistoryInfoInput.swift in Sources */,
 				006E7D25246DF3E100458B75 /* CenteredImageButton.swift in Sources */,
+				006169882475675F00741B02 /* ProductViewModel.swift in Sources */,
 				0094DFE2246850B800CF3874 /* ProductOptionsView.swift in Sources */,
 				004CA1BD2472CEB0005AE9F1 /* LoadableView.swift in Sources */,
 				00772DB32471C7E700F5C311 /* HistoryMockService.swift in Sources */,

@@ -1,6 +1,6 @@
 //
 //  ProductMainInfoViewController.swift
-//  ZenitOnline
+//  BankingDemo
 //
 //  Created by Mikhail Monakov on 16/01/2020.
 //  Copyright © 2020 Surf. All rights reserved.
@@ -64,60 +64,42 @@ extension ProductMainInfoViewController: ProductMainInfoViewInput {
         view.clipsToBounds = true
         configureProductsCarousel()
         productOptionsView.delegate = self
-
-        let mock1: ProductHeaderType = .regular(.init(id: "1", title: "Счет Tinkoff Black", balance: "123 324, 23", description: "За текущий период вы получите"))
-        var models = Array(repeating: mock1, count: 3)
-
-        let mock2: ProductHeaderType = .card(.init(id: "2", title: "Альфа Банк", cardModel: CardViewModel(number: "1234", color: .red, logo: nil, typeIcon: CardType.visa.icon)))
-
-        models.append(mock2)
-
-        productsCarousel.configure(with: models,
-                                   offset: 0.0,
-                                   initialPage: 0)
-
-        headerModels = models
-        indicator.configure(lenght: models.count)
-
-        optionsModels = [
-            .init(actions: [.requisites, .replenish, .pay], card: CardViewModel(number: "1234", color: .red, logo: nil, typeIcon: CardType.visa.icon)),
-            .init(actions: [.requisites, .pay], card: nil),
-            .init(actions: [.payByCard, .replenishFromCard], card: nil),
-            .init(actions: [.requisites, .pay], card: nil)
-        ]
-        productOptionsView.configureCurrentState(model: .init(actions: [.requisites, .replenish, .pay], card:  CardViewModel(number: "1234", color: .red, logo: nil, typeIcon: CardType.masterCard.icon)))
     }
 
-//    func update(with models: [ProductMainInfoViewModel], selectedIndex: Int?) {
-//        currentState = selectedIndex ?? 0
-//        nextState = self.currentState
-//        self.models = models
-//
-//        headerModels = models.map {
-//            ($0.localCard ~> { .card($0) }) ?? .regular(.init(id: $0.id,
-//                                                              balance: $0.balance,
-//                                                              descriptions: $0.desciptions,
-//                                                              isHidden: $0.isHiddenBalance))
-//        }
-//
-//        let requiredHeights = headerModels.map { productsCarousel.getRequiredHeight(for: $0) }
-//
-//        optionsModels = zip(models, requiredHeights).map {
-//            ProductOptionsViewModel(topOffset: max(0, $0.1 - Constants.carouselHeight),
-//                                    actions: $0.0.productActions,
-//                                    cards: ($0.0.cards ?? [], $0.0.selectedCard),
-//                                    cardsStatus: $0.0.cardsStatus)
-//        }
-//
-//        productsCarousel.configure(with: headerModels, offset: 0, initialPage: currentState)
-//        productOptionsView.configureCurrentState(model: optionsModels[currentState])
-//        productOptionsView.configureNextState(model: optionsModels[currentState])
-//        let currHeight = self.productOptionsView.getRequiredHeight(for: .current)
-//        self.heightConstraint?.constant = Constants.carouselHeight + currHeight
-//    }
+    func configure(with models: [ProductViewModel]) {
+        indicator.configure(lenght: models.count)
+        configureCarouselModels(for: models)
+        configureOptionModels(for: models)
+    }
 
-    func setLoading(_ isLoading: Bool) {
-//        productsCarousel.setLoading(isLoading)
+    private func configureCarouselModels(for models: [ProductViewModel]) {
+        self.headerModels = models.map {
+            if $0.type == .linkedCard {
+                let cardModel: CardViewModel? = $0.cardInfo ~> { CardViewModel(number: $0.shorNumber,
+                                                                               color: UIColor(hexString: $0.backgroundColor),
+                                                                               typeIcon: $0.type.icon,
+                                                                               needBorder: $0.isOwn) }
+                return .card(.init(id: $0.id,
+                                   title: $0.name,
+                                   cardModel: cardModel ?? .stub))
+            }
+            return .regular(.init(id: $0.id,
+                                  title: $0.name,
+                                  balance: $0.balance,
+                                  description: $0.description))
+        }
+        productsCarousel.configure(with: headerModels, offset: 0, initialPage: 0)
+    }
+
+    private func configureOptionModels(for models: [ProductViewModel]) {
+        self.optionsModels = models.map {
+            let cardModel: CardViewModel? = $0.cardInfo ~> { CardViewModel(number: $0.shorNumber,
+                                                                           color: UIColor(hexString: $0.backgroundColor),
+                                                                           typeIcon: $0.type.icon,
+                                                                           needBorder: $0.isOwn) }
+            return .init(actions: $0.type.actions, card: $0.type == .cardAccount ? cardModel : nil)
+        }
+        optionsModels.first ~> productOptionsView.configureCurrentState
     }
 
 }
@@ -130,19 +112,11 @@ extension ProductMainInfoViewController: ProductOptionsViewDelegate {
         output?.didSelectAction(action)
     }
 
-    func didSelectCard(at index: Int?) {
-        output?.didSelectCard(at: index)
-    }
-
 }
 
 // MARK: - ContentScrollableHeader
 
 extension ProductMainInfoViewController: ContentScrollableHeader {
-
-    func setContentOffset(_ newOffset: CGFloat) {
-
-    }
 
     var viewController: UIViewController {
         return self
@@ -186,8 +160,6 @@ private extension ProductMainInfoViewController {
 
             self.indicator.set(progress: stateModel.progress, from: stateModel.fromPage, to: stateModel.toPage)
         }
-
-        productsCarousel.didSelectHideOption = weak(self) { $0.output?.didSelectHideOption() }
     }
 
 }

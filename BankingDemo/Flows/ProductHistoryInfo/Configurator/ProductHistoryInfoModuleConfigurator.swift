@@ -1,6 +1,6 @@
 //
 //  ProductHistoryInfoModuleConfigurator.swift
-//  ZenitOnline
+//  BankingDemo
 //
 
 import UIKit

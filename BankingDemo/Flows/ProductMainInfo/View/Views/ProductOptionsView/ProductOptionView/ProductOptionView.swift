@@ -1,6 +1,6 @@
 //
 //  ProductOptionView.swift
-//  ZenitOnline
+//  BankingDemo
 //
 
 import UIKit
@@ -100,10 +100,7 @@ final class ProductOptionView: DesignableView {
     func setProgress(_ progress: CGFloat, from: ProductOptionsViewModel, to: ProductOptionsViewModel) {
         let fromOffset = from.card.isSome ? Constants.withDetailOffset : Constants.withoutDetailOffset
         let toOffset = to.card.isSome ? Constants.withDetailOffset : Constants.withoutDetailOffset
-        let test = fromOffset - progress * (fromOffset - toOffset)
-        print(from)
-        print(to)
-        actionsTopContraint.constant = test
+        actionsTopContraint.constant = fromOffset - progress * (fromOffset - toOffset)
     }
 
 }

@@ -22,10 +22,10 @@ final class TitleView: UIView {
     func configure(title: String, subTitle: String?) {
         titleLabel.text = title
         subTitleLabel.text = subTitle
+        titleLabel.font = .systemFont(ofSize: subTitle.isNil ? 17 : 13, weight: subTitle.isNil ? .semibold : .regular)
     }
 
     private func setupInitialState() {
-        titleLabel.font = .systemFont(ofSize: 13, weight: .regular)
         subTitleLabel.font = FontFamily.SFProRounded.bold.font(size: 14)
         titleLabel.textAlignment = .center
         subTitleLabel.textAlignment = .center

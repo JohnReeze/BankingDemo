@@ -1,6 +1,6 @@
 //
 //  ProductHeaderType.swift
-//  ZenitOnline
+//  BankingDemo
 //
 
 import UIKit

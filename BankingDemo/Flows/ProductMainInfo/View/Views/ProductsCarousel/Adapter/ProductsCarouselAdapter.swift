@@ -1,6 +1,6 @@
 //
 //  ProductsCarouselAdapter.swift
-//  ZenitOnline
+//  BankingDemo
 //
 
 import UIKit
@@ -102,6 +102,7 @@ extension ProductCarouselAdapter: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(PlainProductCell.self, indexPath: indexPath) else {
             return UICollectionViewCell()
         }
+        cell.configure(title: model.title, balance: model.balance, description: model.description)
         return cell
     }
 

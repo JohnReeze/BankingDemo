@@ -7,8 +7,12 @@ import UIKit
 struct CardViewModel {
     let number: String
     let color: UIColor
-    let logo: UIImage?
     let typeIcon: UIImage
+    let needBorder: Bool
+
+    static var stub: CardViewModel {
+        return .init(number: "1234", color: .blue, typeIcon: UIImage(), needBorder: true)
+    }
 }
 
 final class CardView: DesignableView {
@@ -43,7 +47,7 @@ final class CardView: DesignableView {
         backView.backgroundColor = model.color
         numberLabel.text = model.number
         cardTypeImageView.image = model.typeIcon
-        bankLogoImageView.image = model.logo
+        backView.layer.borderWidth = model.needBorder ? 1 : 0
     }
 
 }
@@ -56,6 +60,8 @@ private extension CardView {
         view.backgroundColor = .clear
         backView.layer.cornerRadius = 4
         numberLabel.font = UIFont.systemFont(ofSize: 10, weight: .bold)
+        backView.layer.borderWidth = 0
+        backView.layer.borderColor = Styles.Colors.cardBorder.color.cgColor
     }
 
 }

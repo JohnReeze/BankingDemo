@@ -187,3 +187,11 @@ struct PayloadFieldsValues: Decodable {
 struct GroupPayment: Decodable {
     let id: String
 }
+
+extension Currency {
+
+    var sign: String {
+        return "₽"
+    }
+
+}

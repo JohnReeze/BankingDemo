@@ -23,10 +23,14 @@ final class DetailProductPresenter {
 
     // MARK: - Private Properties
 
+    private let productService: ProductService
+    private var titleModels = [DetailProductNameModel]()
+    private var currentState = 0
+
     // MARK: - Initialization
 
-    init() {
-
+    init(productService: ProductService) {
+        self.productService = productService
     }
 
 }
@@ -37,14 +41,17 @@ extension DetailProductPresenter: DetailProductViewOutput {
 
     func viewLoaded() {
         view?.setupInitialState()
-        detailedContentInput?.configure(with: [
-            "TestID1",
-            "TestID2",
-            "TestID3",
-            "TestID4"
-        ], selectedIndex: 0)
-
-        view?.configure(with: .init(title: "Счет Tinkoff Black", subTitle: "128 204,19 ₽"))
+        productService.loadProducts { [weak self] result in
+            switch result {
+            case .success(let models):
+                mainContentInput?.configure(with: models)
+                detailedContentInput?.configure(with: models)
+                self?.titleModels = models.map { .init(title: $0.name, subTitle: $0.type != .linkedCard ? $0.balance : nil) }
+                self?.titleModels.first ~> self?.view?.configure
+            case .failure(let error):
+                dump(error)
+            }
+        }
     }
 
     func closeAction() {
@@ -55,27 +62,15 @@ extension DetailProductPresenter: DetailProductViewOutput {
 
     }
 
-    func viewDidAppear() {
-
-    }
-
-    func viewWillDisappear() {
-
-    }
-
 }
 
 extension DetailProductPresenter: ProductMainInfoOutput {
+
     func didStateChanged(_ newState: ProductStateViewModel) {
-
-    }
-
-    func didSelectCard(at index: Int?) {
-
-    }
-
-    func didChangedBalance(_ isHidden: Bool) {
-
+        detailedContentInput?.didChangedState(newState)
+        guard currentState != newState.fromPage else { return }
+        currentState = newState.fromPage
+        titleModels[safe: currentState] ~> view?.configure
     }
 
 }

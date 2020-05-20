@@ -1,6 +1,6 @@
 //
 //  ContentCollaborativeViewInput.swift
-//  ZenitOnline
+//  BankingDemo
 //
 
 protocol ContentCollaborativeViewInput: class {

@@ -1,7 +1,8 @@
 //
 //  ProductMainInfoInput.swift
-//  ZenitOnline
+//  BankingDemo
 //
 
 protocol ProductMainInfoInput: class {
+    func configure(with models: [ProductViewModel])
 }

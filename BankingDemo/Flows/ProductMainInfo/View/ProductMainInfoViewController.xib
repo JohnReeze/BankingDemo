@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,18 +22,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vlB-Go-F9X" customClass="ProductsCarouselView" customModule="BankingDemoDebug" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="602" height="200"/>
+                    <rect key="frame" x="0.0" y="0.0" width="602" height="180"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="XLR-oG-VYY"/>
+                        <constraint firstAttribute="height" constant="180" id="XLR-oG-VYY"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xj-op-nvN" customClass="ProductOptionsView" customModule="BankingDemoDebug" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="200" width="602" height="137"/>
+                    <rect key="frame" x="0.0" y="180" width="602" height="157"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ySb-jo-gas" customClass="InfiniteInidicator" customModule="BankingDemoDebug" customModuleProvider="target">
-                    <rect key="frame" x="30" y="200" width="542" height="2"/>
+                    <rect key="frame" x="30" y="180" width="542" height="2"/>
                     <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="MzL-SH-eGn"/>

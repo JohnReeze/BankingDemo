@@ -2,9 +2,6 @@
 //  ProductsCarouselView.swift
 //  BankingDemo
 //
-//  Created by Mikhail Monakov on 20/01/2020.
-//  Copyright © 2020 Surf. All rights reserved.
-//
 
 import UIKit
 

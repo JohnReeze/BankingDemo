@@ -14,26 +14,18 @@ final class ProductDetailedInfoViewController: UIViewController {
     // MARK: - Constants
 
     private enum Constants {
-        static let shadowSpaceOffset: CGFloat = 5
-    }
-
-    // MARK: - Nested types
-
-    struct State {
-        let progress: CGFloat
-        let from: Int
-        let to: Int
+        static let defaultOffset: CGFloat = 64
     }
 
     // MARK: - IBOutlets
 
     @IBOutlet private weak var pageContainer: UIView!
     @IBOutlet private weak var expensesView: ExpensesView!
-    @IBOutlet private weak var segmentBlurView: UIView!
-    @IBOutlet private weak var contentBlurView: UIView!
 
     // MARK: - Private Properties
 
+    @IBOutlet private weak var pageTopConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var expensesHeightConstraint: NSLayoutConstraint!
     private var animationBlock: Closure<EmptyClosure>?
 
     var historyContent: ContentCollaborative?
@@ -74,13 +66,24 @@ extension ProductDetailedInfoViewController: ProductDetailedInfoViewInput {
 
     func setupInitialState() {
         configureContentView()
+        view.backgroundColor = Styles.Colors.main.color
     }
 
-    func setStateChangeProgress(_ progress: Double) {
-        let progress = 2 * CGFloat(progress)
-        let alpha: CGFloat = progress < 1 ? progress : 2 - progress
-        segmentBlurView.alpha = CGFloat(alpha)
-        contentBlurView.alpha = CGFloat(alpha)
+    func setExpensesOption(_ isEnabled: Bool) {
+        expensesView.isHidden = !isEnabled
+    }
+
+    func setProgress(_ progress: Double, hadExpenses: Bool, willHaveExpenses: Bool) {
+        if willHaveExpenses && progress > 0 {
+            expensesView.alpha = CGFloat(2 * progress - 1)
+        } else if hadExpenses {
+            expensesView.alpha = CGFloat(1 - progress * 2)
+        }
+
+        let fromOffset = hadExpenses ? Constants.defaultOffset : 0
+        let toOffset = willHaveExpenses ? Constants.defaultOffset : 0
+        print(fromOffset, toOffset, progress)
+        pageTopConstraint.constant = fromOffset - CGFloat(progress) * (fromOffset - toOffset)
     }
 
     func configure(model: ExpensesModel) {
@@ -116,16 +119,6 @@ private extension ProductDetailedInfoViewController {
             self?.scrollableDelegate?.didScroll(in: contentView.scrollView)
         }
         view.layoutIfNeeded()
-    }
-
-    func configureBlurViews() {
-        segmentBlurView.isHidden = false
-        segmentBlurView.backgroundColor = Styles.Colors.main.color
-        segmentBlurView.alpha = 0
-
-        contentBlurView.isHidden = false
-        contentBlurView.backgroundColor = Styles.Colors.main.color
-        contentBlurView.alpha = 0
     }
 
 }

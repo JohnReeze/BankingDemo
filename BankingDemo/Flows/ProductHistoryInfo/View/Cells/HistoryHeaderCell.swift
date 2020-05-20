@@ -30,7 +30,7 @@ private extension HistoryHeaderCell {
     func setupInitialState() {
         selectionStyle = .none
         addSubview(titleLabel)
-        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         titleLabel.anchor(top: self.topAnchor,
                           leading: self.leadingAnchor,
                           bottom: self.bottomAnchor,

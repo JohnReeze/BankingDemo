@@ -12,7 +12,7 @@ final class ProductOptionView: DesignableView {
     private enum Constants {
         static let withDetailOffset: CGFloat = 94
         static let withoutDetailOffset: CGFloat = 50
-        static let defaultBottomOffset: CGFloat = 30
+        static let defaultBottomOffset: CGFloat = 10
     }
 
     // MARK: - IBOutlets

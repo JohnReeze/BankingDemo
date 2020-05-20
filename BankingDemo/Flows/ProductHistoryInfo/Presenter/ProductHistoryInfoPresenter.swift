@@ -16,6 +16,7 @@ final class ProductHistoryInfoPresenter {
     private let viewModel = ProductHistoryInfoViewModel()
     private var viewIsReady = false
     private let historyService: HistoryService
+    private var currentId = ""
 
     // MARK: - Initialization
 
@@ -30,10 +31,11 @@ final class ProductHistoryInfoPresenter {
 extension ProductHistoryInfoPresenter: ProductHistoryInfoInput {
 
     func forceUpdate() {
-
+        loadHistory(productId: currentId)
     }
 
     func update(for productId: String) {
+        self.currentId = productId
         loadHistory(productId: productId)
     }
 
@@ -47,7 +49,6 @@ extension ProductHistoryInfoPresenter: ContentCollaborativeViewOutput {
         view?.setupInitialState()
         view?.configure(viewModel: viewModel)
         viewIsReady = true
-        loadHistory(productId: "123")
     }
 
 }

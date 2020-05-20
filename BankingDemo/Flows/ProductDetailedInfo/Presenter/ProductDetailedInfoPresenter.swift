@@ -35,14 +35,14 @@ extension ProductDetailedInfoPresenter: ProductDetailedInfoInput {
         self.models = models
         self.currentState = 0
         self.nextState = 0
-        updateStates(for: 0)
         models.first?.id ~> historyInput?.update
     }
 
     func didChangedState(_ newState: ProductStateViewModel) {
-        view?.setStateChangeProgress(newState.progress)
+        view?.setProgress(newState.progress,
+                          hadExpenses: models[safe: newState.fromPage]?.type == .cardAccount,
+                          willHaveExpenses: models[safe: newState.toPage]?.type == .cardAccount)
         currentState = newState.fromPage
-
         if newState.progress > Constants.halfProgress {
             guard newState.toPage != nextState else { return }
             nextState = newState.toPage
@@ -52,8 +52,7 @@ extension ProductDetailedInfoPresenter: ProductDetailedInfoInput {
     }
 
     func forceUpdate() {
-//        historyInput?.forceUpdate()
-//        additionalInfoInput?.forceUpdate()
+        historyInput?.forceUpdate()
     }
 
 }
@@ -68,15 +67,6 @@ extension ProductDetailedInfoPresenter: ProductDetailedInfoViewOutput {
 
     func didChangeState(newState: Int) {
         self.currentTabIndex = newState
-    }
-
-}
-
-// MARK: - Private Methods
-
-private extension ProductDetailedInfoPresenter {
-
-    func updateStates(for newIndex: Int) {
     }
 
 }

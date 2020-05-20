@@ -4,7 +4,8 @@
 //
 
 protocol ProductDetailedInfoViewInput: class {
-    func setStateChangeProgress(_ progress: Double)
     func setupInitialState()
     func configure(model: ExpensesModel)
+    func setExpensesOption(_ isEnabled: Bool)
+    func setProgress(_ progress: Double, hadExpenses: Bool, willHaveExpenses: Bool)
 }

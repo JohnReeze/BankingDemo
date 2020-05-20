@@ -11,7 +11,7 @@ final class ProductOptionView: DesignableView {
 
     private enum Constants {
         static let withDetailOffset: CGFloat = 94
-        static let withoutDetailOffset: CGFloat = 60
+        static let withoutDetailOffset: CGFloat = 50
         static let defaultBottomOffset: CGFloat = 30
     }
 
@@ -81,7 +81,7 @@ final class ProductOptionView: DesignableView {
 
     func getRequiredHeight(for model: ProductOptionsViewModel) -> CGFloat {
         return [
-            model.card.isSome ? Constants.withDetailOffset : Constants.withDetailOffset,
+            model.card.isSome ? Constants.withDetailOffset : Constants.withoutDetailOffset,
             ActionsView.getRequiredSize(for: model.actions).height,
             Constants.defaultBottomOffset
         ].reduce(0, +)
@@ -95,6 +95,15 @@ final class ProductOptionView: DesignableView {
     func setActionsAplha(_ newValue: CGFloat) {
         actionsView.setActionsApla(newValue)
         detailProductView.alpha = newValue
+    }
+
+    func setProgress(_ progress: CGFloat, from: ProductOptionsViewModel, to: ProductOptionsViewModel) {
+        let fromOffset = from.card.isSome ? Constants.withDetailOffset : Constants.withoutDetailOffset
+        let toOffset = to.card.isSome ? Constants.withDetailOffset : Constants.withoutDetailOffset
+        let test = fromOffset - progress * (fromOffset - toOffset)
+        print(from)
+        print(to)
+        actionsTopContraint.constant = test
     }
 
 }

@@ -77,6 +77,7 @@ final class ProductOptionsView: UIView {
         let width = currentState.width - (currentState.width - nextState.width) * cgProgress
         let height = currentState.height - (currentState.height - nextState.height) * cgProgress
         currentStateView.setActionsSize(CGSize(width: width, height: height))
+        currentStateView.setProgress(cgProgress, from: currentModel, to: nextModel)
 
         if progress > 0.5 {
             currentStateView.configure(with: nextModel)

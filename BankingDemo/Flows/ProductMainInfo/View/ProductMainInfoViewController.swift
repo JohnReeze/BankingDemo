@@ -49,9 +49,9 @@ final class ProductMainInfoViewController: UIViewController {
         output?.viewLoaded()
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        indicator.configure(lenght: headerModels.count)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        indicator.configure(lenght: 4)
     }
 
 }
@@ -166,9 +166,6 @@ private extension ProductMainInfoViewController {
         productsCarousel.didScroll = { [weak self] (stateModel, didEndChange) in
             guard let self = self else { return }
 
-            print(stateModel)
-            self.indicator.set(progress: stateModel.progress, from: stateModel.fromPage, to: stateModel.toPage)
-
             if self.currentState != stateModel.fromPage {
                 self.productOptionsView.finishStateChange()
                 self.currentState = stateModel.fromPage
@@ -186,6 +183,8 @@ private extension ProductMainInfoViewController {
             let expectedHeight = Constants.carouselHeight + currHeight - (currHeight - nextHeight) * CGFloat(stateModel.progress)
             self.heightConstraint?.constant = expectedHeight
             self.output?.didStateChanged(stateModel)
+
+            self.indicator.set(progress: stateModel.progress, from: stateModel.fromPage, to: stateModel.toPage)
         }
 
         productsCarousel.didSelectHideOption = weak(self) { $0.output?.didSelectHideOption() }

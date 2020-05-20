@@ -2,7 +2,7 @@
 iOS example of classic banking-like complex UI
 
 
-![](demo/demo.gif)
+![](demo/demo.gif)                  ![](demo/demo2.gif)
 
 
 ## Purpose

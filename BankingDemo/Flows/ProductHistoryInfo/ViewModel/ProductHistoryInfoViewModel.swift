@@ -74,9 +74,8 @@ final class ProductHistoryInfoViewModel: NSObject, TableViewModel {
     private func configureTableView() {
         tableView?.dataSource = self
         tableView?.rowHeight = UITableView.automaticDimension
-        [HistoryHeaderCell.self, HistoryLoaderHeader.self].forEach {
-            tableView?.register($0, forCellReuseIdentifier: $0.nameOfClass)
-        }
+        tableView?.register(HistoryHeaderCell.self, forCellReuseIdentifier: HistoryHeaderCell.nameOfClass)
+        tableView?.register(HistoryLoaderHeader.self, forCellReuseIdentifier: HistoryLoaderHeader.nameOfClass)
         [HistoryLoaderCell.self, HistoryCell.self].forEach {
             tableView?.registerNib($0)
         }

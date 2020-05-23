@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0012220724797201008C9EE3 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0012220624797201008C9EE3 /* DesignableView.swift */; };
+		0012220824797201008C9EE3 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0012220624797201008C9EE3 /* DesignableView.swift */; };
 		001A356C246858A5006DECCE /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001A356B246858A5006DECCE /* UICollectionView.swift */; };
 		001A356D246858A5006DECCE /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001A356B246858A5006DECCE /* UICollectionView.swift */; };
 		001A357024686728006DECCE /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001A356F24686728006DECCE /* UIView.swift */; };
@@ -97,8 +99,6 @@
 		006753742467138A00B035A6 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006753722467138A00B035A6 /* Optional.swift */; };
 		00675376246713BA00B035A6 /* FinanceProductType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00675375246713BA00B035A6 /* FinanceProductType.swift */; };
 		00675377246713BA00B035A6 /* FinanceProductType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00675375246713BA00B035A6 /* FinanceProductType.swift */; };
-		0067537A246719CF00B035A6 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00675379246719CF00B035A6 /* DesignableView.swift */; };
-		0067537B246719CF00B035A6 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00675379246719CF00B035A6 /* DesignableView.swift */; };
 		006E7CFD246B021400458B75 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7CFC246B021300458B75 /* Images.swift */; };
 		006E7CFE246B021400458B75 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7CFC246B021300458B75 /* Images.swift */; };
 		006E7D00246B02EE00458B75 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E7CFF246B02EE00458B75 /* UIImage.swift */; };
@@ -249,6 +249,7 @@
 
 /* Begin PBXFileReference section */
 		0007069FF5F8CA56B77366DE /* UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTests.swift; sourceTree = "<group>"; };
+		0012220624797201008C9EE3 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		001A356B246858A5006DECCE /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		001A356F24686728006DECCE /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		003343E3246EC6620058F5AD /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
@@ -294,7 +295,6 @@
 		0067536F2467130900B035A6 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		006753722467138A00B035A6 /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		00675375246713BA00B035A6 /* FinanceProductType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceProductType.swift; sourceTree = "<group>"; };
-		00675379246719CF00B035A6 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		006E7CFC246B021300458B75 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		006E7CFF246B02EE00458B75 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		006E7D05246B042F00458B75 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -406,6 +406,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0012220524797201008C9EE3 /* DesignableView */ = {
+			isa = PBXGroup;
+			children = (
+				0012220624797201008C9EE3 /* DesignableView.swift */,
+			);
+			name = DesignableView;
+			path = "BankingDemo/Library/Reusable Layer/DesignableView";
+			sourceTree = SOURCE_ROOT;
+		};
 		003343E6246ECC980058F5AD /* ProductDetailedInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,15 +588,6 @@
 				006E7D27246DF42A00458B75 /* String.swift */,
 			);
 			path = Types;
-			sourceTree = "<group>";
-		};
-		00675378246719CF00B035A6 /* DesignableView */ = {
-			isa = PBXGroup;
-			children = (
-				00675379246719CF00B035A6 /* DesignableView.swift */,
-			);
-			name = DesignableView;
-			path = "../../../../../bank-zenit-ios/Reusable/Reusable/Library/Layers/Views/DesignableView";
 			sourceTree = "<group>";
 		};
 		006E7D08246B07BD00458B75 /* CardView */ = {
@@ -856,6 +856,7 @@
 				224FFFF09CAF19F9F15B622C /* Flows */,
 				C9E3B3240DA0F5C79C0FDB1E /* Library */,
 				4EA1DFD179035568BAC82423 /* Models */,
+				4A47BD3623E7049B50A8D396 /* Utils */,
 				182B7C8302A399F0517810B6 /* Resources */,
 				BF9DDE047636BFD23181076C /* Services */,
 				93EC2EEA5643509654F0A651 /* Third Party */,
@@ -925,11 +926,11 @@
 		28A05C464011336A91C119EB /* Reusable Layer */ = {
 			isa = PBXGroup;
 			children = (
+				0012220524797201008C9EE3 /* DesignableView */,
 				006E7D23246DF3D100458B75 /* CenteredImageButton */,
 				006E7D16246C3DD200458B75 /* ActionsView */,
 				006E7D12246C15B200458B75 /* InifiniteCarouselIndicator */,
 				006E7D08246B07BD00458B75 /* CardView */,
-				00675378246719CF00B035A6 /* DesignableView */,
 				0067536724670EA300B035A6 /* CollaborativeScrollView */,
 			);
 			path = "Reusable Layer";
@@ -1089,7 +1090,6 @@
 				3EA3DA2A4DE6040ADAD06B6C /* Protocols */,
 				28A05C464011336A91C119EB /* Reusable Layer */,
 				CD3DB60B63CC2B2517B91DB9 /* Routers */,
-				4A47BD3623E7049B50A8D396 /* Utils */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -1519,7 +1519,6 @@
 				001A357124686728006DECCE /* UIView.swift in Sources */,
 				0094DFD3246850B800CF3874 /* ProductHeaderType.swift in Sources */,
 				004CA1C22472D4D5005AE9F1 /* UITableView.swift in Sources */,
-				0067537B246719CF00B035A6 /* DesignableView.swift in Sources */,
 				001A356D246858A5006DECCE /* UICollectionView.swift in Sources */,
 				003343FB246ECC980058F5AD /* ProductDetailedInfoOutput.swift in Sources */,
 				00675377246713BA00B035A6 /* FinanceProductType.swift in Sources */,
@@ -1541,6 +1540,7 @@
 				006E7D19246C3DE300458B75 /* ActionsView.swift in Sources */,
 				0067536624670D9E00B035A6 /* SoftUnwrapp.swift in Sources */,
 				0094DFE7246850B800CF3874 /* ProductOptionView.swift in Sources */,
+				0012220824797201008C9EE3 /* DesignableView.swift in Sources */,
 				003343E5246EC6620058F5AD /* UINavigationController.swift in Sources */,
 				0094DFCD246850B800CF3874 /* ProductMainInfoPresenter.swift in Sources */,
 				5D4A7B297D28C93B76357970 /* Strings.swift in Sources */,
@@ -1630,7 +1630,6 @@
 				001A357024686728006DECCE /* UIView.swift in Sources */,
 				0094DFD2246850B800CF3874 /* ProductHeaderType.swift in Sources */,
 				004CA1C12472D4D5005AE9F1 /* UITableView.swift in Sources */,
-				0067537A246719CF00B035A6 /* DesignableView.swift in Sources */,
 				001A356C246858A5006DECCE /* UICollectionView.swift in Sources */,
 				003343FA246ECC980058F5AD /* ProductDetailedInfoOutput.swift in Sources */,
 				00675376246713BA00B035A6 /* FinanceProductType.swift in Sources */,
@@ -1652,6 +1651,7 @@
 				006E7D18246C3DE300458B75 /* ActionsView.swift in Sources */,
 				0067536524670D9E00B035A6 /* SoftUnwrapp.swift in Sources */,
 				0094DFE6246850B800CF3874 /* ProductOptionView.swift in Sources */,
+				0012220724797201008C9EE3 /* DesignableView.swift in Sources */,
 				003343E4246EC6620058F5AD /* UINavigationController.swift in Sources */,
 				0094DFCC246850B800CF3874 /* ProductMainInfoPresenter.swift in Sources */,
 				15E296EC10446AA26E4FF535 /* Strings.swift in Sources */,
